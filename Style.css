@@ -1,0 +1,121 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a3a;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+
+    /* Base background color */
+    background-color: #ffffff;
+    overflow-x: hidden; /* prevent horizontal scroll from moving shapes */
+}
+
+/* Animated circles using pseudo-elements */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.2;
+    animation: moveCircle 30s linear infinite;
+}
+
+body::after {
+    background: radial-gradient(circle, #8a2a7a 20%, transparent 80%);
+    top: auto;
+    bottom: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    animation-duration: 45s;
+}
+
+body::before {
+    background: radial-gradient(circle, #f36f21 20%, transparent 80%);
+}
+
+@keyframes moveCircle {
+    0% { transform: translate(0,0) rotate(0deg);}
+    50% { transform: translate(200px, 150px) rotate(180deg);}
+    100% { transform: translate(0,0) rotate(360deg);}
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Logo */
+.logo-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto 50px auto;
+    display: block;
+}
+
+/* Navigation */
+nav {
+    margin-bottom: 40px;
+}
+
+nav a {
+    color: #f36f21;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+h1 {
+    color: #f36f21;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #8a2a7a;
+    border-bottom: 2px solid #ffba00;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 50px;
+}
+
+/* Paragraphs */
+p, li {
+    font-size: 1.1em;
+    color: #333;
+    text-align: left;
+}
+
+ul {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Section styling */
+section {
+    padding: 40px 0;
+}
+
+section:nth-child(even) {
+    background-color: #fafafa;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
