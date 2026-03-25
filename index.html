@@ -4,31 +4,72 @@
     <title>Your Business Name</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background: #f7f7f7;
-            text-align: center;
-        }
-        header {
-            background: #222;
-            color: white;
-            padding: 30px;
-        }
-        section {
-            padding: 40px;
-        }
-        img {
-            max-width: 150px;
-        }
-        .btn {
-            background: #4CAF50;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
+        /* 1. Overall Page Layout & Background */
+  body {
+    background-color: #ffffff; /* Keeping the background pure white makes your vibrant logo the star. */
+    color: #1a1a3a;            /* Dark Navy (from your text) for easy-to-read body text. */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, modern font */
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Container centers all content on the page */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center; /* Centers your text and logo */
+  }
+
+  /* 2. Logo Styling */
+  .logo-img {
+    max-width: 300px; /* Adjust this number to make the logo larger or smaller */
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  /* 3. Main Headings (using the Orange from your logo) */
+  h1 {
+    color: #f36f21; /* Your specific orange */
+    font-size: 2.5em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  /* 4. Sub-headings (using a strong Purple from your logo) */
+  h2 {
+    color: #8a2a7a; /* One of your purples */
+    font-size: 1.8em;
+    border-bottom: 2px solid #ffba00; /* Subtle orange/yellow underline from the fan */
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  /* 5. Regular Text (using the Navy from your text) */
+  p {
+    color: #1a1a3a; /* Your navy text color */
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+
+  /* 6. A "Call to Action" or Link (using the vibrant Orange) */
+  a.appointment-button {
+    background-color: #f36f21; /* Orange background */
+    color: white !important;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  a.appointment-button:hover {
+    background-color: #d15d19; /* Darker orange on hover */
+  }
     </style>
 </head>
 
