@@ -67,9 +67,10 @@ body {
 
 /* Logo */
 .logo-img {
-    max-width: 240px;
+    width: 180px;   /* exact control */
+    height: auto;
     display: block;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 20px auto;
 }
 
 /* Navigation */
