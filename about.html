@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | I See Counseling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-orange: #f36f21;
+            --brand-purple: #8e2b88;
+            --brand-navy: #1a1a3a;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--brand-navy);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Top Logo Branding */
+        .top-logo {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .top-logo img {
+            max-width: 120px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title-handwritten {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5em;
+            color: var(--brand-orange);
+            margin: 0;
+        }
+
+        /* The Hero Diagram */
+        .diagram-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .diagram-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        /* Content Blocks with Colored Borders */
+        .content-block {
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* Alternating Colors for sections */
+        .purple-theme { border-right: 4px solid var(--brand-purple); text-align: right; }
+        .orange-theme { border-left: 4px solid var(--brand-orange); text-align: left; }
+        
+        .purple-theme h2 { color: var(--brand-purple); }
+        .orange-theme h2 { color: var(--brand-orange); }
+
+        .text-body {
+            font-size: 1.05em;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .vision-list li strong {
+            color: var(--brand-navy);
+        }
+
+        /* Back to Home Button */
+        .back-nav {
+            text-align: center;
+            margin-top: 80px;
+        }
+        .btn-back {
+            text-decoration: none;
+            color: var(--brand-purple);
+            font-weight: bold;
+            border: 1px solid var(--brand-purple);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn-back:hover {
+            background-color: var(--brand-purple);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-logo">
+        <img src="logo.png" alt="I See Counseling">
+    </div>
+
+    <header>
+        <h1 class="title-handwritten">About Me</h1>
+    </header>
+
+    <div class="diagram-section">
+        <img src="about-diagram.jpg" alt="Professional Identity Diagram" class="diagram-img">
+    </div>
+
+    <div class="content-block orange-theme">
+        <h2 class="section-title">How it started</h2>
+        <p class="text-body">
+            When I started my own journey of self-discovery, exploring psychology and meditation, I realized humans are far too complex for a single "school of thought." 
+            I understood that we can be blooming into our full potential, but we can also be stuck in the past, unable to see the resources we have. 
+            I realized that to truly help myself and others, the work needed to be multi-disciplinary, spanning every individual's needs and structure.
+        </p>
+    </div>
+
+    <div class="content-block purple-theme">
+        <h2 class="section-title">Education</h2>
+        <ul class="text-body">
+            <li>• Master NLP Practitioner and Coach (Mindline Canada)</li>
+            <li>• Therapeutic Arts Practitioner (Therapeutic Arts Institute - Toronto)</li>
+            <li>• Analytical – Systemic Therapy (Libanm – Expert)</li>
+            <li>• B.A. & B.Sc. Honors in Clinical Psychology (Lebanon)</li>
+        </ul>
+    </div>
+
+    <div class="content-block orange-theme">
+        <h2 class="section-title">Experience</h2>
+        <p class="text-body">
+            My experience spans over 15 years, covering clinical, educational, and community settings across Canada, Lebanon, and the Middle East, supporting children, adolescents, and adults through their most complex transitions. 
+            I help individuals navigate the unique challenges of displacement and identity, providing a safe, multi-lingual space.
+        </p>
+    </div>
+
+    <div class="content-block purple-theme">
+        <h2 class="section-title">Vision and Toolkit</h2>
+        <div class="text-body vision-list">
+            <p>My practice is built on the belief that true lasting transformation requires looking at your life through many lenses:</p>
+            <ul>
+                <li><strong>NLP (Precision):</strong> Identifying the "software" that directs your habits.</li>
+                <li><strong>Systemic Therapy (Depth):</strong> Uncovering hidden family patterns.</li>
+                <li><strong>Therapeutic Arts (Expression):</strong> Accessing insights when words are not enough.</li>
+                <li><strong>Professional Coach (Action):</strong> Creating concrete plans for real-world change.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="back-nav">
+        <a href="index.html" class="btn-back">Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>
