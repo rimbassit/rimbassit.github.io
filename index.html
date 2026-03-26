@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I See Counseling | See, Understand, Unlock</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #1a1a3a;
+        text-align: center;
+      }
+
+      .home-container {
+        max-width: 800px;
+        padding: 20px;
+      }
+
+      /* Logo */
+      .logo-img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      /* THE HEADLINE: "See. Understand. Unlock" */
+      h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 4.5em; /* Large and elegant */
+        font-weight: 400;
+        color: #f36f21; /* Matches the orange in your logo */
+        margin: 0;
+        line-height: 1.1;
+      }
+
+      /* The Tagline */
+      .tagline {
+        font-size: 1.2em;
+        color: #1a1a3a;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        letter-spacing: 0.5px;
+      }
+
+      /* Button Navigation */
+      .nav-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .btn {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-size: 1.1em;
+        padding: 12px 0;
+        width: 280px;
+        border-radius: 8px;
+        border: 1px solid rgba(0,0,0,0.1);
+        transition: transform 0.2s, opacity 0.2s;
+      }
+
+      /* Specific Button Colors from your design */
+      .btn-about { background-color: #8e2b88; } /* Purple */
+      .btn-contact { background-color: #ef2324; } /* Red */
+      .btn-services { background-color: #f7941d; } /* Orange */
+
+      .btn:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+      }
+
+      /* Footer Info */
+      .footer-logistics {
+        font-size: 1em;
+        color: #1a1a3a;
+        line-height: 1.6;
+      }
+    </style>
+</head>
+<body>
+
+  <div class="home-container">
+    <img src="logo.png" alt="I See Counseling Logo" class="logo-img">
+    
+    <h1>See. Understand. Unlock</h1>
+    
+    <p class="tagline">A multi-disciplinary approach to Mental Health and Personal Development</p>
+
+    <div class="nav-menu">
+      <a href="about.html" class="btn btn-about">About Me</a>
+      <a href="contact.html" class="btn btn-contact">Contact</a>
+      <a href="services.html" class="btn btn-services">Services</a>
+    </div>
+
+    <div class="footer-logistics">
+      In Person & Virtual Sessions<br>
+      Services provided in English, French and Arabic
+    </div>
+  </div>
+
+</body>
+</html>
