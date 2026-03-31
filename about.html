@@ -9,174 +9,170 @@
         :root {
             --brand-orange: #f36f21;
             --brand-purple: #8e2b88;
+            --brand-red: #ef2324;
             --brand-navy: #1a1a3a;
+            --text-gray: #333333;
         }
 
+        /* 1. Layout & Scroll Snap */
+        html { scroll-behavior: smooth; }
         body {
             margin: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             color: var(--brand-navy);
             background-color: #ffffff;
-            line-height: 1.6;
+            scroll-snap-type: y mandatory;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        section {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            scroll-snap-align: start;
+            position: relative;
         }
 
-        /* Top Logo Branding */
-        .top-logo {
-            text-align: left;
-            margin-bottom: 20px;
+        /* 2. Fixed Home Button */
+        .nav-top {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 100;
         }
-        .top-logo img {
-            max-width: 120px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .title-handwritten {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4.5em;
-            color: var(--brand-orange);
-            margin: 0;
-        }
-
-        /* The Hero Diagram */
-        .diagram-section {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .diagram-img {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-        }
-
-        /* Content Blocks with Colored Borders */
-        .content-block {
-            margin-bottom: 50px;
-            padding: 20px;
-        }
-
-        .section-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.8em;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        /* Alternating Colors for sections */
-        .purple-theme { border-right: 4px solid var(--brand-purple); text-align: right; }
-        .orange-theme { border-left: 4px solid var(--brand-orange); text-align: left; }
-        
-        .purple-theme h2 { color: var(--brand-purple); }
-        .orange-theme h2 { color: var(--brand-orange); }
-
-        .text-body {
-            font-size: 1.05em;
-            color: #444;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .vision-list li strong {
-            color: var(--brand-navy);
-        }
-
-        /* Back to Home Button */
-        .back-nav {
-            text-align: center;
-            margin-top: 80px;
-        }
-        .btn-back {
+        .btn-home {
             text-decoration: none;
-            color: var(--brand-purple);
-            font-weight: bold;
-            border: 1px solid var(--brand-purple);
-            padding: 10px 20px;
-            border-radius: 5px;
+            color: var(--brand-navy);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: rgba(255,255,255,0.95);
+            padding: 12px 25px;
+            border: 2px solid var(--brand-navy);
+            border-radius: 4px;
             transition: 0.3s;
         }
-        .btn-back:hover {
-            background-color: var(--brand-purple);
-            color: white;
+        .btn-home:hover { background: var(--brand-navy); color: #fff; }
+
+        /* 3. Typography Updates for High Readability */
+        .handwritten {
+            font-family: 'Great Vibes', cursive;
+            font-size: 6rem;
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .section-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .text-content {
+            max-width: 1000px; /* Wider for easier reading */
+            font-size: 1.35rem; /* Larger font size */
+            line-height: 1.9; /* More breathing room between lines */
+            color: var(--text-gray);
+        }
+
+        /* 4. Section Styling */
+        #hero { text-align: center; background: #fff; }
+        .hero-diagram { width: 100%; max-width: 950px; height: auto; margin-top: 30px; }
+
+        #how-it-started { 
+            border-left: 25px solid var(--brand-orange);
+            align-items: flex-start;
+        }
+
+        #education-experience { 
+            background-color: #fcf9fc; 
+            border-right: 25px solid var(--brand-purple);
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        /* Toolkit Grid */
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .toolkit-item {
+            padding: 25px;
+            background: #fdfdfd;
+            border-left: 5px solid #eee;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .toolkit-item strong { display: block; font-size: 1.6rem; margin-bottom: 10px; color: var(--brand-navy); }
+        .toolkit-item p { margin: 0; font-size: 1.15rem; line-height: 1.7; }
+        
+        .precision { border-left-color: var(--brand-purple); }
+        .depth { border-left-color: var(--brand-red); }
+        .expressive { border-left-color: var(--brand-orange); }
+        .action { border-left-color: var(--brand-navy); }
+
+        /* Animation */
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brand-orange);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        @media (max-width: 1024px) {
+            .toolkit-grid { grid-template-columns: 1fr; }
+            .handwritten { font-size: 4rem; }
+            .section-title { font-size: 3.5rem; }
+            .text-content { font-size: 1.2rem; }
+            section { height: auto; min-height: 100vh; padding: 100px 30px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="top-logo">
-        <img src="logo.png" alt="I See Counseling">
-    </div>
+    <nav class="nav-top">
+        <a href="index.html" class="btn-home">← Home</a>
+    </nav>
 
-    <header>
-        <h1 class="title-handwritten">About Me</h1>
-    </header>
+    <section id="hero">
+        <h1 class="handwritten" style="color: var(--brand-orange);">About Me</h1>
+        <img src="about-diagram.jpg" alt="Identity Map" class="hero-diagram">
+        <div class="scroll-hint">Scroll to begin</div>
+    </section>
 
-    <div class="diagram-section">
-        <img src="about-diagram.jpg" alt="Professional Identity Diagram" class="diagram-img">
-    </div>
-
-    <div class="content-block orange-theme">
-        <h2 class="section-title">How it started</h2>
-        <p class="text-body">
-            When I started my own journey of self-discovery, exploring psychology and meditation, I realized humans are far too complex for a single "school of thought." 
-            I understood that we can be blooming into our full potential, but we can also be stuck in the past, unable to see the resources we have. 
-            I realized that to truly help myself and others, the work needed to be multi-disciplinary, spanning every individual's needs and structure.
-        </p>
-    </div>
-
-    <div class="content-block purple-theme">
-        <h2 class="section-title">Education</h2>
-        <ul class="text-body">
-            <li>• Master NLP Practitioner and Coach (Mindline Canada)</li>
-            <li>• Therapeutic Arts Practitioner (Therapeutic Arts Institute - Toronto)</li>
-            <li>• Analytical – Systemic Therapy (Libanm – Expert)</li>
-            <li>• B.A. & B.Sc. Honors in Clinical Psychology (Lebanon)</li>
-        </ul>
-    </div>
-
-    <div class="content-block orange-theme">
-        <h2 class="section-title">Experience</h2>
-        <p class="text-body">
-            My experience spans over 15 years, covering clinical, educational, and community settings across Canada, Lebanon, and the Middle East, supporting children, adolescents, and adults through their most complex transitions. 
-            I help individuals navigate the unique challenges of displacement and identity, providing a safe, multi-lingual space.
-        </p>
-    </div>
-
-    <div class="content-block purple-theme">
-        <h2 class="section-title">Vision and Toolkit</h2>
-        <div class="text-body vision-list">
-            <p>My practice is built on the belief that true lasting transformation requires looking at your life through many lenses:</p>
-            <ul>
-                <li><strong>NLP (Precision):</strong> Identifying the "software" that directs your habits.</li>
-                <li><strong>Systemic Therapy (Depth):</strong> Uncovering hidden family patterns.</li>
-                <li><strong>Therapeutic Arts (Expression):</strong> Accessing insights when words are not enough.</li>
-                <li><strong>Professional Coach (Action):</strong> Creating concrete plans for real-world change.</li>
-            </ul>
+    <section id="how-it-started">
+        <div class="text-content">
+            <h2 class="section-title" style="color: var(--brand-orange);">How it started</h2>
+            <p>When I started my own journey of self-discovery during my psychoanalytical studies and training, I realized that we are far too complex for a single "school of thought". I understood my past but couldn't change my habits, and saw people who only changed their habits but still felt disconnected and stuck.</p>
+            <p>I understood that we can be blooming and thriving in one environment, and fading away and shrinking in another, not being able to see the resources we have, nor use them. We are guided by limiting beliefs stopping us from reaching our full potential.</p>
+            <p>I realized that to truly help myself and others, the work needed to be on many levels and techniques, depending on every individual’s needs and structure. That lead to years of training and practicing across major psychological and developmental pillars to develop my own vision and tool kit.</p>
         </div>
-    </div>
+    </section>
 
-    <div class="back-nav">
-        <a href="index.html" class="btn-back">Back to Home</a>
-    </div>
-</div>
-
-</body>
-</html>
+    <section id="education-experience">
+        <div class="text-content">
+            <h2 class="section-title" style="color: var(--brand-purple);">My Education</h2>
+            <div style="font-weight: 600; margin-bottom: 40px;">
+                Master NLP Practitioner and Coach (coaching Quebec)<br>
+                Theraputic Arts Practitioner (Canadian International Institute of Art Therapy)<br>
+                Analitico – Systemic therapist (Lebanon – Belgium)<br>
+                B.A / M.
