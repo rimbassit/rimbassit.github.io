@@ -18,7 +18,7 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Arial, sans-serif;
-            color: var(--brand-navy); /* All text is now Navy Blue */
+            color: var(--brand-navy);
             background-color: #ffffff;
             scroll-snap-type: y mandatory;
             overflow-x: hidden;
@@ -30,14 +30,14 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center; /* All content blocks are now centered */
+            align-items: center; 
             padding: 60px 80px;
             box-sizing: border-box;
             scroll-snap-align: start;
             position: relative;
         }
 
-        /* 2. Fixed Home Button */
+        /* 2. Navigation */
         .nav-top {
             position: fixed;
             top: 30px;
@@ -48,92 +48,83 @@
             text-decoration: none;
             color: var(--brand-navy);
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             background: rgba(255,255,255,0.95);
-            padding: 12px 25px;
-            border: 2px solid var(--brand-navy);
+            padding: 10px 20px;
+            border: 1.5px solid var(--brand-navy);
             border-radius: 4px;
             transition: 0.3s;
         }
         .btn-home:hover { background: var(--brand-navy); color: #fff; }
 
-        /* 3. Typography */
+        /* 3. Typography - Adjusted one degree smaller */
         .handwritten {
             font-family: 'Great Vibes', cursive;
-            font-size: 6rem;
+            font-weight: 400;
+            font-size: 5rem; /* Down from 6rem */
             margin: 0;
             line-height: 1;
         }
         
         .section-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 4.5rem;
-            margin-bottom: 25px;
+            font-weight: 400;
+            font-size: 3.8rem; /* Down from 4.5rem */
+            margin-bottom: 20px;
             line-height: 1.1;
-            text-align: center; /* Titles centered */
+            text-align: center;
         }
 
         .text-content {
-            max-width: 1000px;
-            font-size: 1.35rem;
-            line-height: 1.9;
-            color: var(--brand-navy); /* Paragraph text in Navy */
-            text-align: center; /* Paragraph text centered */
+            max-width: 950px;
+            font-size: 1.2rem; /* Down from 1.35rem */
+            line-height: 1.8;
+            color: var(--brand-navy); 
+            text-align: center;
         }
 
-        /* 4. Section Specific Bar Styling */
+        /* 4. Section Vertical Bar Styling */
         #hero { padding-top: 100px; }
         .hero-diagram { width: 95%; max-width: 1200px; height: auto; margin-top: 20px; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.06)); }
 
-        #how-it-started { 
-            border-left: 25px solid var(--brand-orange); /* Bar Left */
-        }
-
-        #education { 
-            background-color: #ffffff; 
-            border-right: 25px solid var(--brand-purple); /* Bar Right */
-        }
-
-        #experience { 
-            background-color: #fcf9fc; 
-            border-right: 25px solid var(--brand-red); /* Bar Right */
-        }
+        #how-it-started { border-left: 25px solid var(--brand-orange); }
+        #education { border-right: 25px solid var(--brand-purple); }
+        #experience { border-right: 25px solid var(--brand-red); background-color: #fcf9fc; }
+        #vision-toolkit { border-left: 25px solid var(--brand-navy); }
 
         /* 5. Vision and Toolkit Grid */
-        #vision-toolkit { border-bottom: 25px solid var(--brand-navy); } /* Bottom bar Navy */
-
         .toolkit-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 40px;
-            text-align: left; /* Bullet points inside cards look better left-aligned */
+            gap: 40px;
+            margin-top: 35px;
+            text-align: left;
         }
         
         .toolkit-item {
-            padding: 25px;
+            padding: 22px;
             background: #fdfdfd;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border-bottom: 8px solid; /* Bars under each section */
+            border-left: 8px solid; 
         }
         
-        .toolkit-item strong { display: block; font-size: 1.6rem; margin-bottom: 10px; color: var(--brand-navy); }
-        .toolkit-item p { margin: 0; font-size: 1.15rem; line-height: 1.7; color: var(--brand-navy); }
+        .toolkit-item strong { display: block; font-size: 1.3rem; margin-bottom: 8px; color: var(--brand-navy); }
+        .toolkit-item p { margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--brand-navy); }
         
-        /* 4 Lenses - 4 different colors */
-        .precision { border-bottom-color: var(--brand-purple); }
-        .depth { border-bottom-color: var(--brand-red); }
-        .expressive { border-bottom-color: var(--brand-orange); }
-        .action { border-bottom-color: var(--brand-navy); }
+        /* Toolkit Lens Colors */
+        .nlp { border-left-color: var(--brand-purple); }
+        .psych { border-left-color: var(--brand-red); }
+        .arts { border-left-color: var(--brand-orange); }
+        .coach { border-left-color: var(--brand-navy); }
 
         @media (max-width: 1024px) {
             section { height: auto; min-height: 100vh; padding: 100px 30px; border-width: 15px !important; }
             .toolkit-grid { grid-template-columns: 1fr; }
-            .handwritten { font-size: 4rem; }
-            .section-title { font-size: 3.5rem; }
-            .text-content { font-size: 1.2rem; }
+            .handwritten { font-size: 3.5rem; }
+            .section-title { font-size: 3rem; }
+            .text-content { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -160,7 +151,7 @@
     <section id="education">
         <div class="text-content">
             <h2 class="section-title" style="color: var(--brand-purple);">Education</h2>
-            <div style="font-weight: 600; font-size: 1.45rem; line-height: 2.2;">
+            <div style="font-weight: 500; font-size: 1.3rem; line-height: 2;">
                 • Master NLP Practitioner and Coach (coaching Quebec)<br>
                 • Therapeutic Arts Practitioner (Canadian International Institute of Art Therapy)<br>
                 • Analitico – Systemic therapist (Lebanon – Belgium)<br>
@@ -183,20 +174,20 @@
             <p style="margin-bottom: 30px;">My practice is built on the belief that true lasting transformation requires looking at your life through many lenses:</p>
             
             <div class="toolkit-grid">
-                <div class="toolkit-item precision">
-                    <strong>NLP: Precision</strong>
-                    <p>I use Neuro-Linguistic Programming to help you identify and recode the mental "software" that is pulling you in directions you don't want to go.</p>
+                <div class="toolkit-item nlp">
+                    <strong>Ø NLP : "Precision" lens.</strong>
+                    <p>I use Neuro-Linguistic Programming to help you identify and recode the mental "software" that is pulling you in directions you don't want to go: Your belief system, your values, your identity, and your strategies.</p>
                 </div>
-                <div class="toolkit-item depth">
-                    <strong>Psychoanalytical & Systemic</strong>
-                    <p>These are my "depth" lenses. They allow us to look at the hidden reasons why you might feel stuck or keep repeating the same patterns.</p>
+                <div class="toolkit-item psych">
+                    <strong>Ø Psychoanalytical & Systemic: "Depth" lenses.</strong>
+                    <p>They allow us to look at the hidden reasons why you might feel stuck or keep repeating the same patterns.</p>
                 </div>
-                <div class="toolkit-item expressive">
-                    <strong>Therapeutic Arts</strong>
-                    <p>Sometimes, the most important things we need to say don't have words yet. I use alternative ways of communication to access deeper emotional insights.</p>
+                <div class="toolkit-item arts">
+                    <strong>Ø Therapeutic Arts Practitioner: "Expressive" lens.</strong>
+                    <p>Sometimes, the most important things we need to say don't have words yet. I use simple alternative ways of communication to bypass the "logical mind" and access deeper emotional insights when needed.</p>
                 </div>
-                <div class="toolkit-item action">
-                    <strong>Professional Coach</strong>
+                <div class="toolkit-item coach">
+                    <strong>Ø Professional Coach: "Action" lens.</strong>
                     <p>We don't just talk; we create a simple plan so you can start seeing real changes in your daily life immediately.</p>
                 </div>
             </div>
