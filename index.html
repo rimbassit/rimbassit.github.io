@@ -16,7 +16,7 @@
         justify-content: center;
         background-color: #ffffff;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #1a1a3a;
+        color: #1a1a3a; /* Brand Navy */
         text-align: center;
       }
 
@@ -25,28 +25,28 @@
         padding: 20px;
       }
 
- /* Logo - Nudged to the left for visual centering */
+      /* Logo - Nudged to the left for visual centering */
       .logo-img {
         width: 100%;
-        max-width: 350px;
+        max-width: 320px; /* Sized down slightly for elegance */
         height: auto;
         margin-bottom: 5px;
-        margin-left: -20px; /* This "nudge" pulls it left to align with the buttons */
+        margin-left: -20px; 
       }
 
-      /* THE HEADLINE: "See. Understand. Unlock" */
+      /* THE HEADLINE: Reduced by one degree */
       h1 {
         font-family: 'Great Vibes', cursive;
-        font-size: 4.5em;
+        font-size: 3.8em; /* Down from 4.5em to match About page titles */
         font-weight: 400;
         color: #f36f21; 
-        margin: 0; /* Ensures no extra space around the text */
-        line-height: 0.9; /* Slightly tighter line height to close the gap */
+        margin: 0;
+        line-height: 0.9;
       }
 
       /* The Tagline */
       .tagline {
-        font-size: 1.2em;
+        font-size: 1.1em; /* Down from 1.2em */
         color: #1a1a3a;
         margin-top: 10px;
         margin-bottom: 40px;
@@ -66,18 +66,18 @@
         text-decoration: none;
         color: white;
         font-weight: 500;
-        font-size: 1.1em;
+        font-size: 1rem; /* Slightly smaller for a more professional look */
         padding: 12px 0;
-        width: 280px;
+        width: 260px; /* Narrowed slightly */
         border-radius: 8px;
         border: 1px solid rgba(0,0,0,0.1);
         transition: transform 0.2s, opacity 0.2s;
       }
 
-      /* Specific Button Colors from your design */
-      .btn-about { background-color: #8e2b88; } /* Purple */
-      .btn-contact { background-color: #ef2324; } /* Red */
-      .btn-services { background-color: #f7941d; } /* Orange */
+      /* Palette Colors */
+      .btn-about { background-color: #8e2b88; }    /* Purple */
+      .btn-services { background-color: #ef2324; } /* Red */
+      .btn-contact { background-color: #f7941d; }  /* Orange */
 
       .btn:hover {
         opacity: 0.9;
@@ -86,9 +86,10 @@
 
       /* Footer Info */
       .footer-logistics {
-        font-size: 1em;
+        font-size: 0.95rem; /* One degree smaller */
         color: #1a1a3a;
         line-height: 1.6;
+        opacity: 0.9;
       }
     </style>
 </head>
@@ -99,12 +100,12 @@
     
     <h1>See. Understand. Unlock</h1>
     
-    <p class="tagline">A multi-disciplinary approach to Mental Health and Personal Development</p>
+    <p class="tagline">A Multi-Disciplinary approach to Mental Health and Personal Development</p>
 
     <div class="nav-menu">
       <a href="about.html" class="btn btn-about">About</a>
-      <a href="contact.html" class="btn btn-contact">Services</a>
-      <a href="services.html" class="btn btn-services">Contact</a>
+      <a href="services.html" class="btn btn-services">Services</a>
+      <a href="contact.html" class="btn btn-contact">Contact</a>
     </div>
 
     <div class="footer-logistics">
