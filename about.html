@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,6 @@
             --brand-purple: #8e2b88;
             --brand-red: #ef2324;
             --brand-navy: #1a1a3a;
-            --text-gray: #333333;
         }
 
         /* 1. Layout & Scroll Snap */
@@ -19,7 +18,7 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Arial, sans-serif;
-            color: var(--brand-navy);
+            color: var(--brand-navy); /* All text is now Navy Blue */
             background-color: #ffffff;
             scroll-snap-type: y mandatory;
             overflow-x: hidden;
@@ -31,7 +30,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: center; /* All content blocks are now centered */
             padding: 60px 80px;
             box-sizing: border-box;
             scroll-snap-align: start;
@@ -73,65 +72,64 @@
             font-size: 4.5rem;
             margin-bottom: 25px;
             line-height: 1.1;
+            text-align: center; /* Titles centered */
         }
 
         .text-content {
             max-width: 1000px;
             font-size: 1.35rem;
             line-height: 1.9;
-            color: var(--text-gray);
+            color: var(--brand-navy); /* Paragraph text in Navy */
+            text-align: center; /* Paragraph text centered */
         }
 
-        /* 4. Section Specific Alignment Styles */
-        #hero { text-align: center; padding-top: 100px; }
+        /* 4. Section Specific Bar Styling */
+        #hero { padding-top: 100px; }
         .hero-diagram { width: 95%; max-width: 1200px; height: auto; margin-top: 20px; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.06)); }
 
         #how-it-started { 
-            border-left: 25px solid var(--brand-orange);
-            align-items: flex-start;
-            text-align: left;
+            border-left: 25px solid var(--brand-orange); /* Bar Left */
         }
 
         #education { 
             background-color: #ffffff; 
-            border-left: 25px solid var(--brand-purple);
-            align-items: flex-start;
-            text-align: left;
+            border-right: 25px solid var(--brand-purple); /* Bar Right */
         }
 
         #experience { 
             background-color: #fcf9fc; 
-            border-right: 25px solid var(--brand-red); /* Updated to Brand Red */
-            align-items: flex-end;
-            text-align: right;
+            border-right: 25px solid var(--brand-red); /* Bar Right */
         }
 
-        #vision-toolkit { text-align: center; }
+        /* 5. Vision and Toolkit Grid */
+        #vision-toolkit { border-bottom: 25px solid var(--brand-navy); } /* Bottom bar Navy */
 
-        /* Toolkit Grid */
         .toolkit-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             margin-top: 40px;
-            text-align: left;
+            text-align: left; /* Bullet points inside cards look better left-aligned */
         }
+        
         .toolkit-item {
             padding: 25px;
             background: #fdfdfd;
-            border-left: 5px solid #eee;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-bottom: 8px solid; /* Bars under each section */
         }
-        .toolkit-item strong { display: block; font-size: 1.6rem; margin-bottom: 10px; color: var(--brand-navy); }
-        .toolkit-item p { margin: 0; font-size: 1.15rem; line-height: 1.7; }
         
-        .precision { border-left-color: var(--brand-purple); }
-        .depth { border-left-color: var(--brand-red); }
-        .expressive { border-left-color: var(--brand-orange); }
-        .action { border-left-color: var(--brand-navy); }
+        .toolkit-item strong { display: block; font-size: 1.6rem; margin-bottom: 10px; color: var(--brand-navy); }
+        .toolkit-item p { margin: 0; font-size: 1.15rem; line-height: 1.7; color: var(--brand-navy); }
+        
+        /* 4 Lenses - 4 different colors */
+        .precision { border-bottom-color: var(--brand-purple); }
+        .depth { border-bottom-color: var(--brand-red); }
+        .expressive { border-bottom-color: var(--brand-orange); }
+        .action { border-bottom-color: var(--brand-navy); }
 
         @media (max-width: 1024px) {
-            section { height: auto; min-height: 100vh; padding: 100px 30px; border-width: 12px !important; }
+            section { height: auto; min-height: 100vh; padding: 100px 30px; border-width: 15px !important; }
             .toolkit-grid { grid-template-columns: 1fr; }
             .handwritten { font-size: 4rem; }
             .section-title { font-size: 3.5rem; }
@@ -147,7 +145,7 @@
 
     <section id="hero">
         <h1 class="handwritten" style="color: var(--brand-orange);">About Me</h1>
-        <img src="about-diagram.jpg" alt="The Integrated Path Framework" class="hero-diagram">
+        <img src="about-diagram.jpg" alt="Identity Map" class="hero-diagram">
     </section>
 
     <section id="how-it-started">
@@ -187,7 +185,7 @@
             <div class="toolkit-grid">
                 <div class="toolkit-item precision">
                     <strong>NLP: Precision</strong>
-                    <p>My "precision" lens. I use Neuro-Linguistic Programming to help you identify and recode the mental "software" that is pulling you in directions you don't want to go: Your belief system, your values, your identity, and your strategies.</p>
+                    <p>I use Neuro-Linguistic Programming to help you identify and recode the mental "software" that is pulling you in directions you don't want to go.</p>
                 </div>
                 <div class="toolkit-item depth">
                     <strong>Psychoanalytical & Systemic</strong>
@@ -195,11 +193,11 @@
                 </div>
                 <div class="toolkit-item expressive">
                     <strong>Therapeutic Arts</strong>
-                    <p>This is my "expressive" lens. Sometimes, the most important things we need to say don't have words yet. I use simple alternative ways of communication to bypass the "logical mind" and access deeper emotional insights when needed.</p>
+                    <p>Sometimes, the most important things we need to say don't have words yet. I use alternative ways of communication to access deeper emotional insights.</p>
                 </div>
                 <div class="toolkit-item action">
                     <strong>Professional Coach</strong>
-                    <p>This is my "action" lens. We don't just talk; we create a simple plan so you can start seeing real changes in your daily life immediately.</p>
+                    <p>We don't just talk; we create a simple plan so you can start seeing real changes in your daily life immediately.</p>
                 </div>
             </div>
         </div>
