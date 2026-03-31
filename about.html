@@ -32,7 +32,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 80px 40px;
+            padding: 60px 40px;
             box-sizing: border-box;
             scroll-snap-align: start;
             position: relative;
@@ -60,7 +60,7 @@
         }
         .btn-home:hover { background: var(--brand-navy); color: #fff; }
 
-        /* 3. Typography Updates for High Readability */
+        /* 3. Typography Updates */
         .handwritten {
             font-family: 'Great Vibes', cursive;
             font-size: 6rem;
@@ -76,16 +76,27 @@
         }
 
         .text-content {
-            max-width: 1000px; /* Wider for easier reading */
-            font-size: 1.35rem; /* Larger font size */
-            line-height: 1.9; /* More breathing room between lines */
+            max-width: 1000px;
+            font-size: 1.35rem;
+            line-height: 1.9;
             color: var(--text-gray);
         }
 
-        /* 4. Section Styling */
-        #hero { text-align: center; background: #fff; }
-        .hero-diagram { width: 100%; max-width: 950px; height: auto; margin-top: 30px; }
+        /* 4. Hero Section with BIGGER DIAGRAM */
+        #hero { 
+            text-align: center; 
+            background: #fff;
+            padding-top: 100px; /* Space for the "About Me" title */
+        }
+        .hero-diagram { 
+            width: 95%; /* Responsive width */
+            max-width: 1200px; /* Increased from 950px for a much larger look */
+            height: auto; 
+            margin-top: 20px;
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.06)); /* Soft shadow for depth */
+        }
 
+        /* 5. Section Styling */
         #how-it-started { 
             border-left: 25px solid var(--brand-orange);
             align-items: flex-start;
@@ -144,6 +155,7 @@
             .section-title { font-size: 3.5rem; }
             .text-content { font-size: 1.2rem; }
             section { height: auto; min-height: 100vh; padding: 100px 30px; }
+            #hero { padding-top: 80px; }
         }
     </style>
 </head>
@@ -155,8 +167,8 @@
 
     <section id="hero">
         <h1 class="handwritten" style="color: var(--brand-orange);">About Me</h1>
-        <img src="about-diagram.jpg" alt="Identity Map" class="hero-diagram">
-        <div class="scroll-hint">Scroll to begin</div>
+        <img src="about-diagram.jpg" alt="The Integrated Path Framework" class="hero-diagram">
+        <div class="scroll-hint">Discover The Journey</div>
     </section>
 
     <section id="how-it-started">
@@ -171,8 +183,44 @@
     <section id="education-experience">
         <div class="text-content">
             <h2 class="section-title" style="color: var(--brand-purple);">My Education</h2>
-            <div style="font-weight: 600; margin-bottom: 40px;">
-                Master NLP Practitioner and Coach (coaching Quebec)<br>
-                Theraputic Arts Practitioner (Canadian International Institute of Art Therapy)<br>
-                Analitico – Systemic therapist (Lebanon – Belgium)<br>
-                B.A / M.
+            <div style="font-weight: 600; margin-bottom: 40px; font-size: 1.4rem;">
+                • Master NLP Practitioner and Coach (coaching Quebec)<br>
+                • Theraputic Arts Practitioner (Canadian International Institute of Art Therapy)<br>
+                • Analitico – Systemic therapist (Lebanon – Belgium)<br>
+                • B.A / M.A mastercourse in Clinical psychology (Lebanon)
+            </div>
+            
+            <h2 class="section-title" style="color: var(--brand-purple);">Experience</h2>
+            <p>My experience spans over **15 years** covering clinical, educational, and community settings across Canada, Lebanon, and the Middle East, supporting children, adolescents, and adults through their most complex transitions.</p>
+            <p>I help individuals navigate the unique challenges of displacement and identity. Whether seeking immediate growth or working through deep patterns, my goal is to provide a safe, multilingual, cultural aware space so you can **See, Understand, and Unlock** your potential.</p>
+        </div>
+    </section>
+
+    <section id="vision-toolkit">
+        <div class="text-content">
+            <h2 class="section-title" style="color: var(--brand-navy); text-align: center;">Vision and Toolkit</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Transformation requires looking at your life through many lenses:</p>
+            
+            <div class="toolkit-grid">
+                <div class="toolkit-item precision">
+                    <strong>NLP: Precision</strong>
+                    <p>Identify and recode the mental "software" directing your habits, values, identity, and strategies.</p>
+                </div>
+                <div class="toolkit-item depth">
+                    <strong>Psychoanalytical & Systemic</strong>
+                    <p>Address the hidden reasons why you might feel stuck or keep repeating the same patterns.</p>
+                </div>
+                <div class="toolkit-item expressive">
+                    <strong>Therapeutic Arts</strong>
+                    <p>Bypass the logical mind to access deeper emotional insights when words are not enough.</p>
+                </div>
+                <div class="toolkit-item action">
+                    <strong>Professional Coach</strong>
+                    <p>Create a simple, immediate plan so you can start seeing real changes in your daily life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
