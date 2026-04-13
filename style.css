@@ -15,7 +15,7 @@ body {
 /* Header & Hamburger Navigation */
 .navbar {
     width: 100%;
-    padding: 10px 5% 0 5%; /* Very tight top padding */
+    padding: 10px 5% 0 5%;
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -63,26 +63,41 @@ body {
 /* Main Layout Elements */
 .logo-container {
     text-align: center;
-    padding: 0 0 10px 0; /* Minimal padding around logo */
+    padding: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-logo {
     max-width: 500px;
-    width: 90%; /* Larger percentage for mobile visibility */
+    width: 85%;
     height: auto;
+}
+
+/* Tagline Style */
+.tagline {
+    font-family: 'Montserrat', sans-serif;
+    color: #F15A24; /* Brand Orange */
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: -5px;
+    padding: 0 20px;
+    max-width: 600px;
+    text-align: center;
 }
 
 .divider {
     border: 0;
     height: 1px;
-    background: #8E2B88;
-    margin: 0 auto;
+    background: #8E2B88; /* Brand Purple */
+    margin: 15px auto;
     width: 90%;
     max-width: 1000px;
 }
 
 .discover-banner-container {
-    margin: 20px 0; /* Reduced margin */
+    margin: 20px 0;
     text-align: center;
 }
 
@@ -100,7 +115,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* Button Grid - Desktop */
+/* Button Grid */
 .icon-grid {
     display: flex;
     justify-content: center;
@@ -126,6 +141,10 @@ body {
     color: #1A1A3A;
     margin-bottom: 10px;
     line-height: 1.2;
+    height: 2.4rem; /* Keeps titles aligned even with line breaks */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .icon-item img {
@@ -149,24 +168,14 @@ body {
         gap: 40px;
     }
 
-    .icon-item {
-        width: 100%;
-    }
-
-    .icon-item img {
-        width: 180px;
-        height: 180px;
-    }
+    .icon-item { width: 100%; }
+    .icon-item img { width: 180px; height: 180px; }
 }
 
 @media (max-width: 480px) {
-    .main-logo {
-        max-width: 100%; /* Allows it to fill the width better on small phones */
-        width: 95%;
+    .tagline {
+        font-size: 0.9rem;
     }
-    
-    .discover-banner {
-        width: 85%;
-        padding: 10px 0;
-    }
+    .main-logo { width: 95%; }
+    .discover-banner { width: 85%; padding: 10px 0; }
 }
