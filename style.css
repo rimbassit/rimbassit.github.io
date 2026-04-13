@@ -1,0 +1,181 @@
+/* General Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1A1A3A; /* Navy */
+    overflow-x: hidden;
+}
+
+/* Header & Hamburger Navigation */
+.navbar {
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    display: block;
+    z-index: 1001;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px auto;
+    background-color: #1A1A3A;
+    transition: 0.3s;
+}
+
+.nav-list {
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    background-color: white;
+    list-style: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: none; /* Hidden on load */
+    z-index: 1000;
+}
+
+.nav-list.active {
+    display: block;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #1A1A3A;
+    display: block;
+    padding: 15px 25px;
+    font-weight: 500;
+}
+
+.nav-list li a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Main Layout Elements */
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.main-logo {
+    max-width: 450px;
+    width: 85%;
+    height: auto;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #8E2B88; /* Purple */
+    margin: 10px auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.discover-banner-container {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.discover-banner {
+    background-color: #1A1A3A; /* Navy */
+    color: white;
+    display: inline-block;
+    padding: 12px 100px;
+    border-radius: 12px;
+}
+
+.discover-banner h2 {
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* Button Grid - Desktop */
+.icon-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.icon-item {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-item p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1A1A3A;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.icon-item img {
+    width: 150px; /* Uniform circle size */
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-item img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet & Mobile Layout */
+@media (max-width: 768px) {
+    .icon-grid {
+        flex-direction: column; /* Vertical stack for easy tapping */
+        align-items: center;
+        gap: 50px;
+    }
+
+    .icon-item {
+        width: 100%;
+    }
+
+    .icon-item img {
+        width: 180px; /* Larger icons for mobile */
+        height: 180px;
+    }
+
+    .discover-banner {
+        width: 80%;
+        padding: 12px 0;
+    }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+    .main-logo {
+        max-width: 300px;
+    }
+    
+    .discover-banner h2 {
+        font-size: 1.5rem;
+    }
+}
