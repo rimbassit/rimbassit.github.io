@@ -79,7 +79,7 @@ body {
     border: 0;
     height: 1px;
     background: #8E2B88;
-    margin: 5px auto 20px auto; /* Added bottom margin since tagline is gone */
+    margin: 5px auto 20px auto;
     width: 90%;
     max-width: 1000px;
 }
@@ -111,7 +111,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px 5%;
-    max-width: 1200px;
+    max-width: 1000px; /* Narrowed slightly for 4 buttons */
     margin: 0 auto;
 }
 
