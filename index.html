@@ -8,49 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     
     <style>
+      /* BASE STYLES (Mobile First) */
       body, html {
-        height: 100%;
+        min-height: 100%; /* Changed from height: 100% to allow scrolling on small phones */
         margin: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: #ffffff;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #1a1a3a; /* Brand Navy */
+        color: #1a1a3a;
         text-align: center;
       }
 
       .home-container {
+        width: 100%;
         max-width: 800px;
-        padding: 20px;
+        padding: 40px 20px; /* More vertical breathing room for mobile */
+        box-sizing: border-box;
       }
 
-      /* Logo - Nudged to the left for visual centering */
+      /* Responsive Logo */
       .logo-img {
         width: 100%;
-        max-width: 320px; /* Sized down slightly for elegance */
+        max-width: 280px; /* Slightly smaller on mobile */
         height: auto;
         margin-bottom: 5px;
-        margin-left: -20px; 
+        transition: all 0.3s ease;
       }
 
-      /* THE HEADLINE: Reduced by one degree */
+      /* HEADLINE: Fluid size using 'vw' (viewport width) with a min/max fallback */
       h1 {
         font-family: 'Great Vibes', cursive;
-        font-size: 3.8em; /* Down from 4.5em to match About page titles */
+        font-size: clamp(2.8rem, 10vw, 3.8rem); 
         font-weight: 400;
         color: #f36f21; 
         margin: 0;
-        line-height: 0.9;
+        line-height: 1.1;
       }
 
-      /* The Tagline */
       .tagline {
-        font-size: 1.1em; /* Down from 1.2em */
+        font-size: 1rem;
         color: #1a1a3a;
-        margin-top: 10px;
-        margin-bottom: 40px;
+        margin: 15px auto 40px auto;
+        max-width: 500px; /* Keeps text from getting too wide on desktop */
         letter-spacing: 0.5px;
+        line-height: 1.4;
       }
 
       /* Button Navigation */
@@ -66,53 +69,48 @@
         text-decoration: none;
         color: white;
         font-weight: 500;
-        font-size: 1rem; /* Slightly smaller for a more professional look */
-        padding: 12px 0;
-        width: 260px; /* Narrowed slightly */
+        font-size: 1.1rem; /* Slightly larger for easier mobile tapping */
+        padding: 14px 0;
+        width: 100%; /* Full width on mobile containers */
+        max-width: 280px; /* Fixed max width for desktop */
         border-radius: 8px;
         border: 1px solid rgba(0,0,0,0.1);
         transition: transform 0.2s, opacity 0.2s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       }
 
-      /* Palette Colors */
-      .btn-about { background-color: #8e2b88; }    /* Purple */
-      .btn-services { background-color: #ef2324; } /* Red */
-      .btn-contact { background-color: #f7941d; }  /* Orange */
+      .btn-about { background-color: #8e2b88; }
+      .btn-services { background-color: #ef2324; }
+      .btn-contact { background-color: #f7941d; }
 
       .btn:hover {
         opacity: 0.9;
-        transform: scale(1.02);
+        transform: translateY(-2px); /* Lift effect instead of just scaling */
       }
 
-      /* Footer Info */
       .footer-logistics {
-        font-size: 0.95rem; /* One degree smaller */
+        font-size: 0.9rem;
         color: #1a1a3a;
-        line-height: 1.6;
+        line-height: 1.8;
         opacity: 0.9;
       }
-    </style>
-</head>
-<body>
 
-  <div class="home-container">
-    <img src="logo.png" alt="I See Counseling Logo" class="logo-img">
-    
-    <h1>See. Understand. Unlock</h1>
-    
-    <p class="tagline">A Multi-Disciplinary approach to Mental Health and Personal Development</p>
+      /* DESKTOP SPECIFIC ADJUSTMENTS */
+      @media (min-width: 768px) {
+        .logo-img {
+          max-width: 320px;
+          margin-left: -20px; /* Only nudge on desktop where space allows */
+        }
+        
+        .tagline {
+          font-size: 1.15rem;
+        }
 
-    <div class="nav-menu">
-      <a href="about.html" class="btn btn-about">About</a>
-      <a href="services.html" class="btn btn-services">Services</a>
-      <a href="contact.html" class="btn btn-contact">Contact</a>
-    </div>
+        .btn {
+          font-size: 1rem;
+          padding: 12px 0;
+        }
+      }
 
-    <div class="footer-logistics">
-      In Person & Virtual Sessions<br>
-      Services provided in English, French and Arabic
-    </div>
-  </div>
-
-</body>
-</html>
+      /* iPhone SE / Small Phone fix */
+      @media (max-
