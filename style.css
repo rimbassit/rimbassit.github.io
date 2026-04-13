@@ -63,7 +63,7 @@ body {
 /* Main Layout Elements */
 .logo-container {
     text-align: center;
-    padding: 0 0 10px 0;
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,23 +75,11 @@ body {
     height: auto;
 }
 
-/* Tagline Style */
-.tagline {
-    font-family: 'Montserrat', sans-serif;
-    color: #F15A24; /* Brand Orange */
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: -5px;
-    padding: 0 20px;
-    max-width: 600px;
-    text-align: center;
-}
-
 .divider {
     border: 0;
     height: 1px;
-    background: #8E2B88; /* Brand Purple */
-    margin: 15px auto;
+    background: #8E2B88;
+    margin: 5px auto 20px auto; /* Added bottom margin since tagline is gone */
     width: 90%;
     max-width: 1000px;
 }
@@ -141,7 +129,7 @@ body {
     color: #1A1A3A;
     margin-bottom: 10px;
     line-height: 1.2;
-    height: 2.4rem; /* Keeps titles aligned even with line breaks */
+    height: 2.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,9 +161,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    .tagline {
-        font-size: 0.9rem;
-    }
     .main-logo { width: 95%; }
     .discover-banner { width: 85%; padding: 10px 0; }
 }
