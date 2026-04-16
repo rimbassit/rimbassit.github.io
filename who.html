@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Support | I See Counseling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-list" id="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="who.html">Who We Are</a></li>
+            <li><a href="offer.html">What We Offer</a></li>
+            <li><a href="vision.html">Our Vision</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-layout">
+        <header class="page-header">
+            <h1>Is This You?</h1>
+            <p class="subtitle">Identifying the pattern is the first step toward shifting it.</p>
+        </header>
+
+        <main class="content-wrapper">
+            
+            <section class="scenario-group">
+                <h2 class="category-title">Individual Clarity & Performance</h2>
+                <div class="scenario-grid">
+                    <div class="support-card orange">
+                        <p><strong>If you are successful but exhausted,</strong> carrying a heavy mental load and high expectations—we work to find <em>Sustainable Alignment.</em></p>
+                    </div>
+                    <div class="support-card orange">
+                        <p><strong>If you are stuck in overthinking,</strong> facing complex decisions or internal conflict—we provide the tools for <em>Clarity & Direction.</em></p>
+                    </div>
+                    <div class="support-card orange">
+                        <p><strong>If you are navigating a major transition,</strong> whether personal or professional—we offer the <em>Structure & Stability</em> needed to anchor the shift.</p>
+                    </div>
+                    <div class="support-card orange">
+                        <p><strong>If you are reacting to triggers</strong> and feel tired of your own habitual responses—we help you build the capacity for <em>Intentional Action.</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scenario-group">
+                <h2 class="category-title">Relational & Systemic Dynamics</h2>
+                <div class="scenario-grid">
+                    <div class="support-card purple">
+                        <p><strong>If you are in a "recurring movie,"</strong> where the same arguments repeat—we pivot the focus toward <em>Connection & Realignment.</em></p>
+                    </div>
+                    <div class="support-card purple">
+                        <p><strong>If you are struggling with boundaries,</strong> finding it hard to say "no" or express needs—we establish <em>Grounded Limits.</em></p>
+                    </div>
+                    <div class="support-card purple">
+                        <p><strong>If you are repeating family patterns,</strong> noticing generational habits—we engage in <em>Deep Pattern Work</em> to shift the root.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scenario-group">
+                <h2 class="category-title">Deep Growth & Discovery</h2>
+                <div class="scenario-grid">
+                    <div class="support-card magenta">
+                        <p><strong>If you are an "intellectualizer,"</strong> who understands the why but can’t feel the change—we break through the <em>Logical Wall.</em></p>
+                    </div>
+                    <div class="support-card magenta">
+                        <p><strong>If you are feeling "fine" but capped,</strong> knowing you are operating at a fraction of your potential—we expand your <em>Personal Resources.</em></p>
+                    </div>
+                    <div class="support-card magenta">
+                        <p><strong>If you are seeking deeper meaning,</strong> wanting to explore your internal world—we facilitate a journey of <em>Self-Discovery.</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cta-container">
+                <p>Does this sound like you?</p>
+                <a href="contact.html" class="cta-button">Let's Connect</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const navList = document.querySelector('#nav-list');
+        menu.addEventListener('click', () => { navList.classList.toggle('active'); });
+    </script>
+</body>
+</html>
