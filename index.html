@@ -4,176 +4,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I See Counseling - Home</title>
-    
     <style>
+        /* Core Brand Colors */
         :root {
             --navy: #1A1A3A;
             --red: #E82431;
             --systemic-orange: #E85E2E;
-            --white: #ffffff;
+            --purple: #D067C0;
+            --maroon: #7A1A6B;
+            --sage-orange: #E18318;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--white);
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: var(--navy);
+            text-align: center;
         }
 
-        /* Header / Logo Section */
-        .hero-section {
-            width: 100%;
+        /* Header & Navigation */
+        header {
             display: flex;
             justify-content: center;
-            padding: 40px 0;
-            border-bottom: 1px solid #ddd;
+            align-items: center;
+            padding: 20px;
+            position: relative;
         }
 
         .main-logo {
-            width: 90%;
-            max-width: 500px;
+            max-width: 350px;
             height: auto;
         }
 
-        /* Discover Text - Navy & Simple */
-        .discover-container {
-            margin: 50px 0;
-            text-align: center;
+        .hamburger {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
         }
 
-        .discover-text {
-            color: var(--navy);
-            font-size: 2.8rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            margin: 0;
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--navy);
+            margin: 4px 0;
         }
 
-        /* Icons Grid */
-        .nav-icons-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+        /* Divider Line */
+        .divider {
             width: 90%;
-            max-width: 1100px;
-            margin-bottom: 80px;
+            height: 1px;
+            background-color: var(--maroon);
+            margin: 0 auto 30px;
+            opacity: 0.5;
         }
 
-        .icon-item {
+        /* Discover Link - Plain Navy Text */
+        .discover-link {
+            display: inline-block;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        /* Icon Grid Layout */
+        .nav-grid {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .nav-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-decoration: none;
-            transition: transform 0.3s ease;
+            width: 180px;
         }
 
-        .icon-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .icon-label {
-            color: var(--navy);
+        .nav-item span {
             font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            line-height: 1.3;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
         }
 
-        .circular-icon {
-            width: 160px;
-            height: 160px;
+        /* Circular Icons with 8px Red Border */
+        .circle-icon {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            /* Using the Red/Orange border from your design */
-            border: 8px solid var(--red); 
+            border: 8px solid var(--red);
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
-        .circular-icon img {
-            width: 85%;
-            height: auto;
-            object-fit: contain;
+        .circle-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 850px) {
-            .nav-icons-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 50px;
-            }
-            .circular-icon {
-                width: 140px;
-                height: 140px;
-            }
+        .circle-icon:hover {
+            transform: scale(1.05);
         }
 
-        @media (max-width: 480px) {
-            .nav-icons-container {
-                grid-template-columns: 1fr;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-grid {
+                flex-direction: column;
+                align-items: center;
             }
-            .discover-text {
-                font-size: 2.2rem;
+            
+            .main-logo {
+                max-width: 250px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Main Branding Header -->
-    <header class="hero-section">
-        <img src="butterfly logo_2.png" alt="I See Counseling" class="main-logo">
+    <header>
+        <img src="main-logo.png" alt="I See Counseling Logo" class="main-logo">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
-    <!-- Discover Section -->
-    <div class="discover-container">
-        <h1 class="discover-text">Discover</h1>
+    <div class="divider"></div>
+
+    <a href="#" class="discover-link">Discover</a>
+
+    <div class="nav-grid">
+        <!-- Who We Are -->
+        <div class="nav-item">
+            <span>Who<br>We Are</span>
+            <a href="about.html" class="circle-icon">
+                <img src="who-we-are.jpg" alt="Who We Are">
+            </a>
+        </div>
+
+        <!-- What We Offer -->
+        <div class="nav-item">
+            <span>What<br>We Offer</span>
+            <a href="#" class="circle-icon">
+                <img src="offer.jpg" alt="What We Offer">
+            </a>
+        </div>
+
+        <!-- Our Vision -->
+        <div class="nav-item">
+            <span>Our<br>Vision</span>
+            <a href="#" class="circle-icon">
+                <img src="vision.jpg" alt="Our Vision">
+            </a>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="nav-item">
+            <span>Contact<br>Us</span>
+            <a href="#" class="circle-icon">
+                <img src="contact.jpg" alt="Contact Us">
+            </a>
+        </div>
     </div>
-
-    <!-- Navigation Icons Section -->
-    <nav class="nav-icons-container">
-        
-        <!-- Who We Are (about.html) -->
-        <a href="about.html" class="icon-item">
-            <p class="icon-label">Who<br>We Are</p>
-            <div class="circular-icon">
-                <!-- Using the 2 hands file for this section per your request -->
-                <img src="2 hands.jpg" alt="Who We Are">
-            </div>
-        </a>
-
-        <!-- What We Offer (services.html) -->
-        <a href="services.html" class="icon-item">
-            <p class="icon-label">What<br>We Offer</p>
-            <div class="circular-icon">
-                <img src="offer-icon.png" alt="What We Offer">
-            </div>
-        </a>
-
-        <!-- Our Vision (vision.html) -->
-        <a href="vision.html" class="icon-item">
-            <p class="icon-label">Our<br>Vision</p>
-            <div class="circular-icon">
-                <img src="vision-icon.png" alt="Our Vision">
-            </div>
-        </a>
-
-        <!-- Contact Us (contact.html) -->
-        <a href="contact.html" class="icon-item">
-            <p class="icon-label">Contact<br>Us</p>
-            <div class="circular-icon">
-                <img src="contact-icon.png" alt="Contact Us">
-            </div>
-        </a>
-
-    </nav>
 
 </body>
 </html>
