@@ -6,12 +6,13 @@
     <title>About - I See Counseling</title>
     <style>
         :root {
-            --navy: #1A1A3A;
+            /* Navy matched to the logo provided in the model */
+            --navy: #1A1A3A; 
             --red: #E82431;
             --systemic-orange: #E85E2E;
-            --purple: #D067C0;
-            --maroon: #7A1A6B;
             --light-orange: #F59E42;
+            /* Blue for specific bio highlights */
+            --bio-blue: #3E4B99; 
         }
 
         body {
@@ -19,10 +20,10 @@
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
-            color: #ffffff; /* White text for cards */
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
         }
 
         /* --- Header Section --- */
@@ -60,18 +61,21 @@
         }
         #menu-toggle:checked ~ .dropdown-content { display: block; }
 
-        /* --- Content Container --- */
+        /* --- Main Layout --- */
         .container {
             width: 90%;
-            max-width: 900px;
+            max-width: 950px;
             margin-top: 20px;
-            padding-bottom: 50px;
+            padding-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers all direct children */
         }
 
         /* --- Top Bio Card --- */
         .bio-card {
             background-color: var(--navy);
-            border-radius: 40px;
+            border-radius: 45px;
             padding: 40px;
             display: flex;
             flex-wrap: wrap;
@@ -79,6 +83,9 @@
             gap: 20px;
             position: relative;
             text-align: left;
+            color: #ffffff;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .photo-placeholder {
@@ -90,126 +97,123 @@
         }
 
         .bio-text { flex: 1; }
-        .bio-text h1 { margin: 0; font-size: 2rem; letter-spacing: 1px; }
-        .bio-text p { margin: 10px 0; line-height: 1.5; font-size: 1.1rem; }
+        .bio-text h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; color: white; }
+        .bio-text p { margin: 10px 0; line-height: 1.5; font-size: 1.15rem; }
+        
+        .blue-text { color: var(--bio-blue); font-weight: 500; }
 
         .card-logo {
-            width: 150px;
+            width: 140px;
             height: auto;
             margin-left: auto;
         }
 
-        /* --- Middle Certification Card with Background Accents --- */
+        /* --- Middle Certification Card --- */
         .cert-section {
             position: relative;
-            margin-top: 60px;
+            margin-top: 70px;
             padding: 20px 0;
+            width: 100%;
         }
 
         .bg-accent-red {
             position: absolute;
-            top: -20px; left: -10px;
-            width: 300px; height: 80px;
+            top: -20px; left: -15px;
+            width: 320px; height: 90px;
             background: linear-gradient(to right, var(--red), var(--systemic-orange));
-            border-radius: 40px;
+            border-radius: 45px;
             z-index: -1;
         }
 
         .bg-accent-orange {
             position: absolute;
-            bottom: -20px; right: -10px;
-            width: 80%; height: 100px;
+            bottom: -20px; right: -15px;
+            width: 85%; height: 110px;
             background: var(--light-orange);
-            border-radius: 40px;
+            border-radius: 45px;
             z-index: -1;
         }
 
         .cert-card {
             background-color: var(--navy);
-            border-radius: 40px;
-            padding: 40px;
+            border-radius: 45px;
+            padding: 45px;
             text-align: left;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .cert-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .cert-card li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-            line-height: 1.4;
-        }
-
-        .cert-card li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
             color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        /* --- Expertise Section --- */
+        .cert-card ul { list-style: none; padding: 0; margin: 0; }
+        .cert-card li {
+            position: relative; padding-left: 25px; margin-bottom: 14px; font-size: 1.15rem;
+        }
+        .cert-card li::before {
+            content: "•"; position: absolute; left: 0; color: white;
+        }
+
+        /* --- Centered Heading --- */
         .expertise-header {
             background-color: var(--navy);
             color: white;
-            display: inline-block;
-            padding: 10px 40px;
-            border-radius: 25px;
+            padding: 12px 60px;
+            border-radius: 30px;
             font-weight: bold;
-            font-size: 1.3rem;
-            margin: 40px 0 20px;
+            font-size: 1.4rem;
+            margin: 80px 0 40px; /* Space between card above and card below */
+            text-align: center;
+            display: inline-block;
         }
 
+        /* --- Bottom Expertise Card --- */
         .expertise-outer {
             position: relative;
-            padding: 10px;
+            width: 100%;
         }
 
-        .expertise-bg {
+        .expertise-bg-line {
             position: absolute;
             bottom: -15px; left: 50%;
             transform: translateX(-50%);
-            width: 60%; height: 50px;
+            width: 75%; height: 60px;
             background: linear-gradient(to right, var(--red), var(--systemic-orange));
-            border-radius: 25px;
+            border-radius: 30px;
             z-index: -1;
         }
 
         .expertise-card {
-            border: 4px solid var(--navy);
-            border-radius: 40px;
-            padding: 30px;
+            border: 5px solid var(--navy);
+            border-radius: 50px;
+            padding: 45px;
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
             color: var(--navy);
             background: white;
+            box-sizing: border-box;
         }
 
         .expertise-img {
-            max-width: 200px;
+            max-width: 220px;
             height: auto;
         }
 
         .expertise-list {
-            text-align: center;
+            text-align: center; 
             font-weight: bold;
-            font-size: 1.15rem;
-            line-height: 1.8;
+            font-size: 1.25rem;
+            line-height: 2;
         }
 
-        /* --- Responsive Tweaks --- */
+        /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .bio-card { text-align: center; justify-content: center; }
             .card-logo { margin: 20px auto 0; }
-            .expertise-card { flex-direction: column; gap: 20px; }
+            .expertise-card { flex-direction: column; gap: 30px; padding: 30px; }
+            .expertise-img { max-width: 180px; }
             .bg-accent-orange { width: 95%; }
+            .expertise-bg-line { width: 90%; }
+            .expertise-header { font-size: 1.2rem; padding: 10px 40px; }
         }
     </style>
 </head>
@@ -239,14 +243,14 @@
             <div class="bio-text">
                 <h1>RIM EL BASSIT</h1>
                 <p><strong>Founder of I See Counseling</strong><br>
-                Over 15 years of experience in Mental health and Personal Development<br>
+                <span class="blue-text">Over 15 years of experience in Mental health and Personal Development</span><br>
                 Canada, Lebanon and the MENA region.<br>
-                Multicultural, Multilingual.</p>
+                <span class="blue-text">Multicultural, Multilingual.</span></p>
             </div>
             <img src="images/butterfly-logo.png" alt="Logo" class="card-logo">
         </section>
 
-        <!-- Certifications with overlapping accents -->
+        <!-- Certifications -->
         <section class="cert-section">
             <div class="bg-accent-red"></div>
             <div class="bg-accent-orange"></div>
@@ -263,11 +267,12 @@
             </div>
         </section>
 
-        <!-- Expertise Section -->
+        <!-- Centered Sentence Label -->
         <div class="expertise-header">Areas of expertise</div>
         
+        <!-- Bottom Section -->
         <section class="expertise-outer">
-            <div class="expertise-bg"></div>
+            <div class="expertise-bg-line"></div>
             <div class="expertise-card">
                 <img src="images/2 hands.png" alt="Expertise" class="expertise-img">
                 <div class="expertise-list">
