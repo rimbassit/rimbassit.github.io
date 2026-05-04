@@ -3,73 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I See Counseling | Discover</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>I See Counseling - Home</title>
+    
+    <style>
+        :root {
+            --navy: #1A1A3A;
+            --red: #E82431;
+            --systemic-orange: #E85E2E;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header / Logo Section */
+        .hero-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #ddd; /* The line shown in ss.JPG */
+        }
+
+        .main-logo {
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        /* Discover Text (No Banner) */
+        .discover-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .discover-text {
+            color: var(--navy);
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* Icons Grid */
+        .nav-icons-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+            margin-bottom: 60px;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none; /* Removes underline from links */
+            transition: transform 0.2s ease;
+        }
+
+        .icon-item:hover {
+            transform: scale(1.05);
+        }
+
+        .icon-label {
+            color: var(--navy);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .circular-icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 8px solid var(--red); /* The orange-red rings from ss.JPG */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .circular-icon img {
+            width: 80%;
+            height: auto;
+        }
+
+        /* Responsive for Tablets/Phones */
+        @media (max-width: 768px) {
+            .nav-icons-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .circular-icon {
+                width: 120px;
+                height: 120px;
+            }
+
+            .discover-text {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-icons-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <ul class="nav-list" id="nav-list">
-            <li><a href="who.html">Who We Are</a></li>
-            <li><a href="offer.html">What We Offer</a></li>
-            <li><a href="vision.html">Our Vision</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
+    <!-- Main Branding Header -->
+    <header class="hero-section">
+        <img src="butterfly logo_2.png" alt="I See Counseling" class="main-logo">
+    </header>
 
-    <div class="main-layout">
-        <div class="logo-container">
-            <img src="images/main-logo.png" alt="I See Counseling Logo" class="main-logo">
-        </div>
-
-        <hr class="divider">
-
-        <div class="discover-banner-container">
-            <div class="discover-banner">
-                <h2>Discover</h2>
-            </div>
-        </div>
-
-        <section class="icon-grid">
-            <div class="icon-item">
-                <p>Who<br>We Are</p>
-                <a href="about.html"><img src="images/who-we-are.png" alt="Who We Are"></a>
-            </div>
-            
-            <div class="icon-item">
-                <p>What<br>We Offer</p>
-                <a href="services.html"><img src="images/offer.png" alt="What We Offer"></a>
-            </div>
-
-            <div class="icon-item">
-                <p>Our<br>Vision</p>
-                <a href="vision.html"><img src="images/vision.png" alt="Our Vision"></a>
-            </div>
-
-            <div class="icon-item">
-                <p>Contact<br>Us</p>
-                <a href="contact.html"><img src="images/contact.png" alt="Contact Us"></a>
-            </div>
-        </section>
+    <!-- Discover Section (Plain Navy Text) -->
+    <div class="discover-container">
+        <h1 class="discover-text">Discover</h1>
     </div>
 
-    <script>
-        const menu = document.querySelector('#mobile-menu');
-        const navList = document.querySelector('#nav-list');
+    <!-- Navigation Icons Section -->
+    <nav class="nav-icons-container">
         
-        menu.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
+        <!-- Who We Are (Links to about.html) -->
+        <a href="about.html" class="icon-item">
+            <p class="icon-label">Who<br>We Are</p>
+            <div class="circular-icon">
+                <!-- Replace with your tree icon filename -->
+                <img src="tree-icon.png" alt="Who We Are">
+            </div>
+        </a>
 
-        document.querySelectorAll('.nav-list li a').forEach(n => n.addEventListener('click', () => {
-            navList.classList.remove('active');
-        }));
-    </script>
+        <!-- What We Offer -->
+        <a href="services.html" class="icon-item">
+            <p class="icon-label">What<br>We Offer</p>
+            <div class="circular-icon">
+                <!-- Replace with your hand/sun icon filename -->
+                <img src="offer-icon.png" alt="What We Offer">
+            </div>
+        </a>
+
+        <!-- Our Vision -->
+        <a href="vision.html" class="icon-item">
+            <p class="icon-label">Our<br>Vision</p>
+            <div class="circular-icon">
+                <!-- Replace with your telescope icon filename -->
+                <img src="vision-icon.png" alt="Our Vision">
+            </div>
+        </a>
+
+        <!-- Contact Us -->
+        <a href="contact.html" class="icon-item">
+            <p class="icon-label">Contact<br>Us</p>
+            <div class="circular-icon">
+                <!-- Replace with your envelope icon filename -->
+                <img src="contact-icon.png" alt="Contact Us">
+            </div>
+        </a>
+
+    </nav>
+
 </body>
 </html>
