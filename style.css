@@ -459,3 +459,57 @@ body {
         text-align: center;
     }
 }
+:root {
+    --navy: #1A1A3A;
+    --red: #E82431;
+    --systemic-orange: #E85E2E;
+}
+
+/* This allows the page to expand on larger screens */
+.about-container {
+    max-width: 900px; /* Increased from 550px for better desktop feel */
+    width: 95%;
+    margin: 40px auto;
+}
+
+/* Desktop: Header Layout */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+/* Desktop: Expertise Section side-by-side */
+.expertise-content {
+    display: flex;
+    flex-direction: row; /* Forces image and text to stay side-by-side */
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Ensure the illustrations don't get too small */
+.expertise-image img {
+    width: 200px; 
+    height: auto;
+}
+
+.expertise-list {
+    text-align: left; /* Professional left-align for desktop */
+}
+
+/* MOBILE FIX: This kicks in only when the screen is small */
+@media (max-width: 768px) {
+    .profile-header, 
+    .expertise-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .expertise-list {
+        text-align: center;
+    }
+}
