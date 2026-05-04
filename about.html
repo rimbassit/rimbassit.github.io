@@ -6,13 +6,13 @@
     <title>About - I See Counseling</title>
     <style>
         :root {
-            /* Navy matched to the logo provided in the model */
-            --navy: #1A1A3A; 
+            /* Lighter Navy for a softer professional look */
+            --navy: #2A2A5A; 
             --red: #E82431;
             --systemic-orange: #E85E2E;
             --light-orange: #F59E42;
-            /* Blue for specific bio highlights */
-            --bio-blue: #3E4B99; 
+            /* Baby Blue for requested bio text highlights */
+            --baby-blue: #89CFF0; 
         }
 
         body {
@@ -69,7 +69,7 @@
             padding-bottom: 80px;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers all direct children */
+            align-items: center; 
         }
 
         /* --- Top Bio Card --- */
@@ -100,7 +100,8 @@
         .bio-text h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; color: white; }
         .bio-text p { margin: 10px 0; line-height: 1.5; font-size: 1.15rem; }
         
-        .blue-text { color: var(--bio-blue); font-weight: 500; }
+        /* Baby Blue text styling */
+        .highlight-text { color: var(--baby-blue); font-weight: 500; }
 
         .card-logo {
             width: 140px;
@@ -151,7 +152,7 @@
             content: "•"; position: absolute; left: 0; color: white;
         }
 
-        /* --- Centered Heading --- */
+        /* --- Centered Label --- */
         .expertise-header {
             background-color: var(--navy);
             color: white;
@@ -159,7 +160,7 @@
             border-radius: 30px;
             font-weight: bold;
             font-size: 1.4rem;
-            margin: 80px 0 40px; /* Space between card above and card below */
+            margin: 80px 0 40px;
             text-align: center;
             display: inline-block;
         }
@@ -183,7 +184,7 @@
         .expertise-card {
             border: 5px solid var(--navy);
             border-radius: 50px;
-            padding: 45px;
+            padding: 0 45px; /* Removed top/bottom padding to let img touch border */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -191,29 +192,43 @@
             color: var(--navy);
             background: white;
             box-sizing: border-box;
+            height: 450px; /* Set height to control the stretch */
+            overflow: hidden;
         }
 
+        /* Stretches img to touch top and bottom border */
         .expertise-img {
-            max-width: 220px;
-            height: auto;
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+            display: block;
         }
 
         .expertise-list {
             text-align: center; 
             font-weight: bold;
             font-size: 1.25rem;
-            line-height: 2;
+            line-height: 1.8;
+            padding: 20px 0;
         }
 
         /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .bio-card { text-align: center; justify-content: center; }
             .card-logo { margin: 20px auto 0; }
-            .expertise-card { flex-direction: column; gap: 30px; padding: 30px; }
-            .expertise-img { max-width: 180px; }
+            .expertise-card { 
+                flex-direction: column; 
+                height: auto; 
+                padding: 30px; 
+                gap: 20px;
+            }
+            .expertise-img { 
+                width: 100%; 
+                height: 200px; 
+                object-fit: contain; 
+            }
             .bg-accent-orange { width: 95%; }
             .expertise-bg-line { width: 90%; }
-            .expertise-header { font-size: 1.2rem; padding: 10px 40px; }
         }
     </style>
 </head>
@@ -243,9 +258,9 @@
             <div class="bio-text">
                 <h1>RIM EL BASSIT</h1>
                 <p><strong>Founder of I See Counseling</strong><br>
-                <span class="blue-text">Over 15 years of experience in Mental health and Personal Development</span><br>
+                <span class="highlight-text">Over 15 years of experience in Mental health and Personal Development</span><br>
                 Canada, Lebanon and the MENA region.<br>
-                <span class="blue-text">Multicultural, Multilingual.</span></p>
+                <span class="highlight-text">Multicultural, Multilingual.</span></p>
             </div>
             <img src="images/butterfly-logo.png" alt="Logo" class="card-logo">
         </section>
