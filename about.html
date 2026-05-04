@@ -4,14 +4,261 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who We Are - I See Counseling</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --navy: #1A1A3A;
+            --red: #E82431;
+            --systemic-orange: #E85E2E;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Layout */
+        .main-header {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header-content {
+            width: 90%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Ensure logo is visible */
+        .main-logo {
+            height: 100px;
+            width: auto;
+            display: block;
+        }
+
+        .menu-icon {
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-icon span {
+            width: 30px;
+            height: 3px;
+            background-color: var(--navy);
+            border-radius: 2px;
+        }
+
+        .about-container {
+            max-width: 800px;
+            width: 95%;
+            margin-top: 20px;
+            padding-bottom: 80px;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background-color: var(--navy);
+            border-radius: 40px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .profile-pic-placeholder {
+            width: 110px;
+            height: 110px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .name-info h1 {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .card-logo-icon {
+            width: 90px;
+            height: auto;
+        }
+
+        .profile-bio p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        /* Colored Blocks Behind Certifications */
+        .cert-wrapper {
+            position: relative;
+            padding: 20px 0;
+            margin-bottom: 80px;
+        }
+
+        .bg-block {
+            position: absolute;
+            border-radius: 35px;
+            z-index: 1;
+        }
+
+        /* Red block top-left */
+        .red-block {
+            background-color: var(--red);
+            width: 45%;
+            height: 80px;
+            top: -20px;
+            left: -10px;
+        }
+
+        /* Orange block bottom-right */
+        .orange-block {
+            background-color: var(--systemic-orange);
+            width: 95%;
+            height: 120px;
+            bottom: -25px;
+            right: -10px;
+        }
+
+        .cert-card {
+            position: relative;
+            z-index: 2; /* Sits above the blocks */
+            background-color: var(--navy);
+            border-radius: 45px;
+            padding: 40px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .cert-card ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+
+        .cert-card li {
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-size: 1.05rem;
+        }
+
+        /* Expertise Section */
+        .expertise-label {
+            background-color: var(--navy);
+            color: white;
+            width: fit-content;
+            padding: 12px 50px;
+            border-radius: 30px;
+            margin: 0 auto -25px auto;
+            position: relative;
+            z-index: 4;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .expertise-wrapper {
+            position: relative;
+        }
+
+        /* Red block behind bottom card */
+        .expertise-red-base {
+            background-color: var(--red);
+            width: 85%;
+            height: 100px;
+            bottom: -20px;
+            left: 7.5%;
+            position: absolute;
+            border-radius: 40px;
+            z-index: 1;
+        }
+
+        .expertise-card {
+            position: relative;
+            z-index: 2;
+            border: 6px solid var(--navy);
+            background-color: white;
+            border-radius: 50px;
+            padding: 60px 40px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .expertise-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            gap: 40px;
+        }
+
+        .expertise-image img {
+            width: 220px;
+            height: auto;
+            display: block;
+        }
+
+        .expertise-list p {
+            color: var(--navy);
+            font-weight: bold;
+            margin: 8px 0;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .orange-wedge {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 60px;
+            height: 90%;
+            background-color: var(--systemic-orange);
+            clip-path: polygon(100% 0, 75% 100%, 100% 100%);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .expertise-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .main-logo {
+                height: 70px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header with Logo and Menu -->
     <header class="main-header">
         <div class="header-content">
-            <img src="logo.png" alt="SEE Counseling Logo" class="main-logo">
+            <!-- Ensure these files are uploaded to the main GitHub folder -->
+            <img src="butterfly logo_2.png" alt="SEE Counseling Logo" class="main-logo">
             <div class="menu-icon">
                 <span></span>
                 <span></span>
@@ -28,7 +275,7 @@
                 <div class="name-info">
                     <h1>RIM EL BASSIT</h1>
                 </div>
-                <img src="logo.png" alt="Logo Icon" class="card-logo-icon">
+                <img src="butterfly logo_2.png" alt="Logo Icon" class="card-logo-icon">
             </div>
             <div class="profile-bio">
                 <p><strong>Founder of I See Counseling</strong></p>
@@ -37,7 +284,7 @@
             </div>
         </section>
 
-        <!-- Certifications with Red/Orange Blocks -->
+        <!-- Certifications Section with Blocks -->
         <section class="cert-wrapper">
             <div class="bg-block red-block"></div>
             <div class="bg-block orange-block"></div>
@@ -58,11 +305,12 @@
         <div class="expertise-label">Areas of expertise</div>
         
         <section class="expertise-wrapper">
-             <div class="bg-block expertise-red-base"></div>
+             <div class="expertise-red-base"></div>
              <div class="expertise-card">
                 <div class="expertise-content">
                     <div class="expertise-image">
-                        <img src="hands.jpg" alt="Relational Dynamics">
+                        <!-- Path must be exact -->
+                        <img src="2 hands.jpg" alt="Relational Dynamics Illustration">
                     </div>
                     <div class="expertise-list">
                         <p>Self-Discovery & Growth</p>
