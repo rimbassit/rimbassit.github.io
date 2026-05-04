@@ -29,7 +29,7 @@
             display: flex;
             justify-content: center;
             padding: 40px 0;
-            border-bottom: 1px solid #ddd; /* The line shown in ss.JPG */
+            border-bottom: 1px solid #ddd;
         }
 
         .main-logo {
@@ -38,17 +38,17 @@
             height: auto;
         }
 
-        /* Discover Text (No Banner) */
+        /* Discover Text - Navy & Simple */
         .discover-container {
-            margin: 40px 0;
+            margin: 50px 0;
             text-align: center;
         }
 
         .discover-text {
             color: var(--navy);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 400;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin: 0;
         }
 
@@ -56,70 +56,71 @@
         .nav-icons-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 25px;
             width: 90%;
-            max-width: 1000px;
-            margin-bottom: 60px;
+            max-width: 1100px;
+            margin-bottom: 80px;
         }
 
         .icon-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-decoration: none; /* Removes underline from links */
-            transition: transform 0.2s ease;
+            text-decoration: none;
+            transition: transform 0.3s ease;
         }
 
         .icon-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-10px);
         }
 
         .icon-label {
             color: var(--navy);
             font-weight: bold;
             text-align: center;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            line-height: 1.2;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            line-height: 1.3;
         }
 
         .circular-icon {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 8px solid var(--red); /* The orange-red rings from ss.JPG */
+            /* Using the Red/Orange border from your design */
+            border: 8px solid var(--red); 
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .circular-icon img {
-            width: 80%;
+            width: 85%;
             height: auto;
+            object-fit: contain;
         }
 
-        /* Responsive for Tablets/Phones */
-        @media (max-width: 768px) {
+        /* Responsive Breakpoints */
+        @media (max-width: 850px) {
             .nav-icons-container {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
+                gap: 50px;
             }
-            
             .circular-icon {
-                width: 120px;
-                height: 120px;
-            }
-
-            .discover-text {
-                font-size: 2rem;
+                width: 140px;
+                height: 140px;
             }
         }
 
         @media (max-width: 480px) {
             .nav-icons-container {
                 grid-template-columns: 1fr;
+            }
+            .discover-text {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -131,7 +132,7 @@
         <img src="butterfly logo_2.png" alt="I See Counseling" class="main-logo">
     </header>
 
-    <!-- Discover Section (Plain Navy Text) -->
+    <!-- Discover Section -->
     <div class="discover-container">
         <h1 class="discover-text">Discover</h1>
     </div>
@@ -139,38 +140,35 @@
     <!-- Navigation Icons Section -->
     <nav class="nav-icons-container">
         
-        <!-- Who We Are (Links to about.html) -->
+        <!-- Who We Are (about.html) -->
         <a href="about.html" class="icon-item">
             <p class="icon-label">Who<br>We Are</p>
             <div class="circular-icon">
-                <!-- Replace with your tree icon filename -->
-                <img src="tree-icon.png" alt="Who We Are">
+                <!-- Using the 2 hands file for this section per your request -->
+                <img src="2 hands.jpg" alt="Who We Are">
             </div>
         </a>
 
-        <!-- What We Offer -->
+        <!-- What We Offer (services.html) -->
         <a href="services.html" class="icon-item">
             <p class="icon-label">What<br>We Offer</p>
             <div class="circular-icon">
-                <!-- Replace with your hand/sun icon filename -->
                 <img src="offer-icon.png" alt="What We Offer">
             </div>
         </a>
 
-        <!-- Our Vision -->
+        <!-- Our Vision (vision.html) -->
         <a href="vision.html" class="icon-item">
             <p class="icon-label">Our<br>Vision</p>
             <div class="circular-icon">
-                <!-- Replace with your telescope icon filename -->
                 <img src="vision-icon.png" alt="Our Vision">
             </div>
         </a>
 
-        <!-- Contact Us -->
+        <!-- Contact Us (contact.html) -->
         <a href="contact.html" class="icon-item">
             <p class="icon-label">Contact<br>Us</p>
             <div class="circular-icon">
-                <!-- Replace with your envelope icon filename -->
                 <img src="contact-icon.png" alt="Contact Us">
             </div>
         </a>
