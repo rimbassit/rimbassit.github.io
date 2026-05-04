@@ -46,7 +46,6 @@
             top: 40px;
         }
 
-        /* Hidden Checkbox Hack for Dropdown */
         #menu-toggle {
             display: none;
         }
@@ -89,7 +88,6 @@
             color: var(--red);
         }
 
-        /* Show menu when checkbox is checked */
         #menu-toggle:checked ~ .dropdown-content {
             display: block;
         }
@@ -103,7 +101,7 @@
             opacity: 0.3;
         }
 
-        /* Discover Text (Plain, No Link) */
+        /* Discover Text */
         .discover-text {
             display: block;
             color: var(--navy);
@@ -143,30 +141,21 @@
             text-align: center;
         }
 
-        /* Circular Icons with 8px Red Border */
-        .circle-icon {
+        /* Icon Containers - No Border, Equal Sizing */
+        .icon-container {
             width: 160px;
             height: 160px;
-            border-radius: 50%;
-            border: 8px solid var(--red);
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white;
+            background-color: transparent;
         }
 
-        .circle-icon img {
+        .icon-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-        }
-
-        /* Fix for Contact Icon fitting issues */
-        .contact-fix img {
-            width: 80%;
-            height: 80%;
-            object-fit: contain;
+            /* 'contain' ensures the whole image fits the 160px box regardless of original dimensions */
+            object-fit: contain; 
         }
 
         /* Responsive Design */
@@ -214,7 +203,7 @@
         <!-- Who We Are -->
         <a href="about.html" class="nav-item">
             <span>Who<br>We Are</span>
-            <div class="circle-icon">
+            <div class="icon-container">
                 <img src="images/who-we-are.png" alt="Who We Are">
             </div>
         </a>
@@ -222,7 +211,7 @@
         <!-- What We Offer -->
         <div class="nav-item">
             <span>What<br>We Offer</span>
-            <div class="circle-icon">
+            <div class="icon-container">
                 <img src="images/offer.png" alt="What We Offer">
             </div>
         </div>
@@ -230,7 +219,7 @@
         <!-- Our Vision -->
         <div class="nav-item">
             <span>Our<br>Vision</span>
-            <div class="circle-icon">
+            <div class="icon-container">
                 <img src="images/vision.png" alt="Our Vision">
             </div>
         </div>
@@ -238,7 +227,7 @@
         <!-- Contact Us -->
         <div class="nav-item">
             <span>Contact<br>Us</span>
-            <div class="circle-icon contact-fix">
+            <div class="icon-container">
                 <img src="images/contact.png" alt="Contact Us">
             </div>
         </div>
