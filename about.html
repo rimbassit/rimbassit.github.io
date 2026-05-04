@@ -3,294 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who We Are - I See Counseling</title>
-    
+    <title>About - I See Counseling</title>
     <style>
         :root {
             --navy: #1A1A3A;
             --red: #E82431;
             --systemic-orange: #E85E2E;
-            --white: #ffffff;
+            --purple: #D067C0;
+            --maroon: #7A1A6B;
+            --light-orange: #F59E42;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--white);
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #ffffff; /* White text for cards */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Header Layout */
-        .main-header {
+        /* --- Header Section --- */
+        header {
             width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .header-content {
-            width: 90%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             position: relative;
         }
 
-        /* Ensure logo is visible */
         .main-logo {
-            height: 100px;
-            width: auto;
-            display: block;
-        }
-
-        .menu-icon {
-            position: absolute;
-            right: 0;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .menu-icon span {
-            width: 30px;
-            height: 3px;
-            background-color: var(--navy);
-            border-radius: 2px;
-        }
-
-        .about-container {
-            max-width: 800px;
-            width: 95%;
-            margin-top: 20px;
-            padding-bottom: 80px;
-        }
-
-        /* Profile Card */
-        .profile-card {
-            background-color: var(--navy);
-            border-radius: 40px;
-            padding: 40px;
-            color: white;
-            position: relative;
-            margin-bottom: 80px;
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 25px;
-        }
-
-        .profile-pic-placeholder {
-            width: 110px;
-            height: 110px;
-            background-color: white;
-            border-radius: 50%;
-        }
-
-        .name-info h1 {
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-
-        .card-logo-icon {
-            width: 90px;
+            max-width: 300px;
             height: auto;
         }
 
-        .profile-bio p {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin: 10px 0;
-        }
-
-        /* Colored Blocks Behind Certifications */
-        .cert-wrapper {
-            position: relative;
-            padding: 20px 0;
-            margin-bottom: 80px;
-        }
-
-        .bg-block {
+        /* --- Hamburger Menu --- */
+        .menu-container {
             position: absolute;
-            border-radius: 35px;
-            z-index: 1;
+            right: 5%;
+        }
+        #menu-toggle { display: none; }
+        .hamburger { cursor: pointer; padding: 10px; }
+        .hamburger div {
+            width: 25px; height: 3px; background-color: var(--navy); margin: 4px 0;
+        }
+        .dropdown-content {
+            display: none; position: absolute; right: 0; top: 40px;
+            background: white; min-width: 160px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 100; border-radius: 4px;
+        }
+        .dropdown-content a {
+            color: var(--navy); padding: 12px 16px; text-decoration: none; display: block;
+        }
+        #menu-toggle:checked ~ .dropdown-content { display: block; }
+
+        /* --- Content Container --- */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin-top: 20px;
+            padding-bottom: 50px;
         }
 
-        /* Red block top-left */
-        .red-block {
-            background-color: var(--red);
-            width: 45%;
-            height: 80px;
-            top: -20px;
-            left: -10px;
+        /* --- Top Bio Card --- */
+        .bio-card {
+            background-color: var(--navy);
+            border-radius: 40px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            text-align: left;
         }
 
-        /* Orange block bottom-right */
-        .orange-block {
-            background-color: var(--systemic-orange);
-            width: 95%;
-            height: 120px;
-            bottom: -25px;
-            right: -10px;
+        .photo-placeholder {
+            width: 180px;
+            height: 180px;
+            background-color: white;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .bio-text { flex: 1; }
+        .bio-text h1 { margin: 0; font-size: 2rem; letter-spacing: 1px; }
+        .bio-text p { margin: 10px 0; line-height: 1.5; font-size: 1.1rem; }
+
+        .card-logo {
+            width: 150px;
+            height: auto;
+            margin-left: auto;
+        }
+
+        /* --- Middle Certification Card with Background Accents --- */
+        .cert-section {
+            position: relative;
+            margin-top: 60px;
+            padding: 20px 0;
+        }
+
+        .bg-accent-red {
+            position: absolute;
+            top: -20px; left: -10px;
+            width: 300px; height: 80px;
+            background: linear-gradient(to right, var(--red), var(--systemic-orange));
+            border-radius: 40px;
+            z-index: -1;
+        }
+
+        .bg-accent-orange {
+            position: absolute;
+            bottom: -20px; right: -10px;
+            width: 80%; height: 100px;
+            background: var(--light-orange);
+            border-radius: 40px;
+            z-index: -1;
         }
 
         .cert-card {
-            position: relative;
-            z-index: 2; /* Sits above the blocks */
             background-color: var(--navy);
-            border-radius: 45px;
+            border-radius: 40px;
             padding: 40px;
-            color: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .cert-card ul {
-            list-style-type: disc;
-            padding-left: 25px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .cert-card li {
+            position: relative;
+            padding-left: 20px;
             margin-bottom: 12px;
+            font-size: 1.1rem;
             line-height: 1.4;
-            font-size: 1.05rem;
         }
 
-        /* Expertise Section */
-        .expertise-label {
+        .cert-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: white;
+        }
+
+        /* --- Expertise Section --- */
+        .expertise-header {
             background-color: var(--navy);
             color: white;
-            width: fit-content;
-            padding: 12px 50px;
-            border-radius: 30px;
-            margin: 0 auto -25px auto;
-            position: relative;
-            z-index: 4;
-            font-size: 1.2rem;
+            display: inline-block;
+            padding: 10px 40px;
+            border-radius: 25px;
             font-weight: bold;
+            font-size: 1.3rem;
+            margin: 40px 0 20px;
         }
 
-        .expertise-wrapper {
+        .expertise-outer {
             position: relative;
+            padding: 10px;
         }
 
-        /* Red block behind bottom card */
-        .expertise-red-base {
-            background-color: var(--red);
-            width: 85%;
-            height: 100px;
-            bottom: -20px;
-            left: 7.5%;
+        .expertise-bg {
             position: absolute;
-            border-radius: 40px;
-            z-index: 1;
+            bottom: -15px; left: 50%;
+            transform: translateX(-50%);
+            width: 60%; height: 50px;
+            background: linear-gradient(to right, var(--red), var(--systemic-orange));
+            border-radius: 25px;
+            z-index: -1;
         }
 
         .expertise-card {
-            position: relative;
-            z-index: 2;
-            border: 6px solid var(--navy);
-            background-color: white;
-            border-radius: 50px;
-            padding: 60px 40px;
-            display: flex;
-            overflow: hidden;
-        }
-
-        .expertise-content {
+            border: 4px solid var(--navy);
+            border-radius: 40px;
+            padding: 30px;
             display: flex;
             align-items: center;
             justify-content: space-around;
-            width: 100%;
-            gap: 40px;
-        }
-
-        .expertise-image img {
-            width: 220px;
-            height: auto;
-            display: block;
-        }
-
-        .expertise-list p {
+            flex-wrap: wrap;
             color: var(--navy);
-            font-weight: bold;
-            margin: 8px 0;
-            font-size: 1.1rem;
+            background: white;
+        }
+
+        .expertise-img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .expertise-list {
             text-align: center;
+            font-weight: bold;
+            font-size: 1.15rem;
+            line-height: 1.8;
         }
 
-        .orange-wedge {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: 60px;
-            height: 90%;
-            background-color: var(--systemic-orange);
-            clip-path: polygon(100% 0, 75% 100%, 100% 100%);
-        }
-
-        /* Mobile Adjustments */
+        /* --- Responsive Tweaks --- */
         @media (max-width: 768px) {
-            .expertise-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .profile-header {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-            .main-logo {
-                height: 70px;
-            }
+            .bio-card { text-align: center; justify-content: center; }
+            .card-logo { margin: 20px auto 0; }
+            .expertise-card { flex-direction: column; gap: 20px; }
+            .bg-accent-orange { width: 95%; }
         }
     </style>
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-content">
-            <!-- Ensure these files are uploaded to the main GitHub folder -->
-            <img src="butterfly logo_2.png" alt="SEE Counseling Logo" class="main-logo">
-            <div class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <header>
+        <img src="images/main-logo.png" alt="I See Counseling" class="main-logo">
+        <div class="menu-container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <div></div><div></div><div></div>
+            </label>
+            <nav class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="#">Services</a>
+                <a href="#">Vision</a>
+                <a href="#">Contact Us</a>
+            </nav>
         </div>
     </header>
 
-    <div class="about-container">
-        <!-- Profile Card -->
-        <section class="profile-card">
-            <div class="profile-header">
-                <div class="profile-pic-placeholder"></div>
-                <div class="name-info">
-                    <h1>RIM EL BASSIT</h1>
-                </div>
-                <img src="butterfly logo_2.png" alt="Logo Icon" class="card-logo-icon">
+    <div class="container">
+        
+        <!-- Bio Card -->
+        <section class="bio-card">
+            <div class="photo-placeholder"></div>
+            <div class="bio-text">
+                <h1>RIM EL BASSIT</h1>
+                <p><strong>Founder of I See Counseling</strong><br>
+                Over 15 years of experience in Mental health and Personal Development<br>
+                Canada, Lebanon and the MENA region.<br>
+                Multicultural, Multilingual.</p>
             </div>
-            <div class="profile-bio">
-                <p><strong>Founder of I See Counseling</strong></p>
-                <p>Over 15 years of experience in Mental health and Personal Development Canada, Lebanon and the MENA region.</p>
-                <p>Multicultural, Multilingual.</p>
-            </div>
+            <img src="images/butterfly-logo.png" alt="Logo" class="card-logo">
         </section>
 
-        <!-- Certifications Section with Blocks -->
-        <section class="cert-wrapper">
-            <div class="bg-block red-block"></div>
-            <div class="bg-block orange-block"></div>
+        <!-- Certifications with overlapping accents -->
+        <section class="cert-section">
+            <div class="bg-accent-red"></div>
+            <div class="bg-accent-orange"></div>
             <div class="cert-card">
                 <ul>
-                    <li>Certified Master Practitioner in Neuro Linguistic Programming- counseling approach - Canada</li>
+                    <li>Certified Master Practitioner in Neuro Linguistic Programming-counseling approach - Canada</li>
                     <li>Certified Therapeutic Arts Practitioner- Canada</li>
                     <li>Certified Psychoanalytical Therapy Specialist- Lebanon</li>
                     <li>Certified Systemic Therapy Specialist- Belgium</li>
@@ -302,33 +264,28 @@
         </section>
 
         <!-- Expertise Section -->
-        <div class="expertise-label">Areas of expertise</div>
+        <div class="expertise-header">Areas of expertise</div>
         
-        <section class="expertise-wrapper">
-             <div class="expertise-red-base"></div>
-             <div class="expertise-card">
-                <div class="expertise-content">
-                    <div class="expertise-image">
-                        <!-- Path must be exact -->
-                        <img src="2 hands.jpg" alt="Relational Dynamics Illustration">
-                    </div>
-                    <div class="expertise-list">
-                        <p>Self-Discovery & Growth</p>
-                        <p>Clarity & Direction</p>
-                        <p>Relational Dynamics</p>
-                        <p>Emotional Patterns</p>
-                        <p>Communication & Boundaries</p>
-                        <p>Life Transitions</p>
-                        <p>Stress & Internal Pressure</p>
-                        <p>Performance & Alignment</p>
-                        <p>Deep Pattern Work</p>
-                        <p>Psycho-educational counseling</p>
-                        <p>Group & Workshop Facilitation</p>
-                    </div>
+        <section class="expertise-outer">
+            <div class="expertise-bg"></div>
+            <div class="expertise-card">
+                <img src="images/2 hands.png" alt="Expertise" class="expertise-img">
+                <div class="expertise-list">
+                    Self-Discovery & Growth<br>
+                    Clarity & Direction<br>
+                    Relational Dynamics<br>
+                    Emotional Patterns<br>
+                    Communication & Boundaries<br>
+                    Life Transitions<br>
+                    Stress & Internal Pressure<br>
+                    Performance & Alignment<br>
+                    Deep Pattern Work<br>
+                    Psycho-educational counseling<br>
+                    Group & Workshop Facilitation
                 </div>
-                <div class="orange-wedge"></div>
-             </div>
+            </div>
         </section>
+
     </div>
 
 </body>
