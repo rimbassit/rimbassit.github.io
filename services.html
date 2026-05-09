@@ -6,13 +6,11 @@
     <title>Services - I See Counseling</title>
     <style>
         :root {
-            /* Using the lightened navy and professional brand palette */
             --navy: #2A2A5A; 
             --red: #E82431;
             --systemic-orange: #E85E2E;
             --light-orange: #F59E42;
             --purple-accent: #803080;
-            --baby-blue: #89CFF0;
         }
 
         body {
@@ -26,7 +24,7 @@
             align-items: center;
         }
 
-        /* --- Global Header --- */
+        /* --- Header --- */
         header {
             width: 100%;
             display: flex;
@@ -43,24 +41,30 @@
         #menu-toggle { display: none; }
         .hamburger { cursor: pointer; padding: 10px; }
         .hamburger div { width: 25px; height: 3px; background-color: var(--navy); margin: 4px 0; }
+        
         .dropdown-content {
-            display: none; position: absolute; right: 0; top: 40px;
-            background: white; min-width: 160px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            z-index: 100; border-radius: 4px;
+            display: none; 
+            position: absolute; 
+            right: 0; 
+            top: 40px;
+            background: white; 
+            min-width: 160px; 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 100; 
+            border-radius: 4px;
         }
+        
         .dropdown-content a { color: var(--navy); padding: 12px 16px; text-decoration: none; display: block; }
         #menu-toggle:checked ~ .dropdown-content { display: block; }
 
-        /* --- Page Title --- */
         .page-title {
             font-family: 'Cursive', 'Brush Script MT', sans-serif;
             font-size: 3.5rem;
             color: var(--navy);
             margin: 40px 0;
-            text-align: center;
         }
 
-        /* --- Service Row Layout --- */
+        /* --- Services --- */
         .services-container { width: 100%; }
 
         .service-row {
@@ -80,11 +84,11 @@
         .service-content { flex: 1; max-width: 600px; }
         .service-content h2 { font-size: 2.2rem; margin-top: 0; font-weight: bold; }
         .service-content h2.red-text { color: var(--red); }
-        .service-content .quote { font-style: italic; margin-bottom: 20px; font-size: 1.2rem; opacity: 0.9; }
+        .service-content .quote { font-style: italic; margin-bottom: 20px; font-size: 1.2rem; }
         .service-content .description { line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
-        .service-content .rate { font-weight: bold; font-size: 1rem; letter-spacing: 0.5px; }
+        .service-content .rate { font-weight: bold; font-size: 1rem; }
 
-        /* --- Community Access Section --- */
+        /* --- Community Access --- */
         .community-section {
             background-color: var(--purple-accent);
             color: white;
@@ -93,24 +97,19 @@
             text-align: center;
         }
         .community-img { width: 220px; margin-bottom: 30px; }
-        .community-content h2 { font-size: 2.4rem; margin-bottom: 25px; }
-        .community-content p { max-width: 800px; margin: 0 auto; line-height: 1.7; font-size: 1.3rem; padding: 0 20px; }
 
-        /* --- Insurance Banner --- */
+        /* --- Insurance & Disclaimer --- */
         .insurance-banner {
             background: linear-gradient(to right, var(--systemic-orange), var(--light-orange));
             color: white;
-            width: fit-content;
             padding: 18px 60px;
             border-radius: 0 50px 50px 0;
             margin: 50px 0;
             align-self: flex-start;
             font-weight: bold;
             font-size: 1.3rem;
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* --- Disclaimer Box --- */
         .disclaimer-container {
             width: 85%;
             max-width: 1100px;
@@ -125,10 +124,8 @@
             padding: 30px 50px;
             font-size: 1rem;
             line-height: 1.5;
-            color: var(--navy);
         }
 
-        /* --- Contact Button --- */
         .contact-btn {
             background-color: var(--navy);
             color: white;
@@ -138,18 +135,12 @@
             font-weight: bold;
             font-size: 1.4rem;
             margin-bottom: 100px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--navy);
+            display: inline-block;
         }
-        .contact-btn:hover { background-color: white; color: var(--navy); }
 
-        /* --- Responsive Design --- */
         @media (max-width: 900px) {
-            .service-row { flex-direction: column ! standpoint; text-align: center; padding: 40px 5%; }
-            .service-row.reverse { flex-direction: column; }
-            .service-img-container { flex: 0 0 auto; }
-            .service-content { max-width: 100%; }
-            .page-title { font-size: 2.8rem; }
+            .service-row { flex-direction: column !important; text-align: center; }
+            .service-row.reverse { flex-direction: column !important; }
         }
     </style>
 </head>
@@ -174,7 +165,6 @@
     <h1 class="page-title">Services</h1>
 
     <div class="services-container">
-        <!-- Individual Sessions -->
         <section class="service-row dark">
             <div class="service-img-container">
                 <img src="images/individualhead.png" alt="Individual Sessions" class="service-img">
@@ -182,12 +172,11 @@
             <div class="service-content">
                 <h2>Individual Sessions</h2>
                 <p class="quote">"One-on-one sessions for a deeper, personalized navigation of your internal systems."</p>
-                <p class="description">In these sessions, we work together to untangle the hidden habits and beliefs that hold you back, so you can clearly see your path and move forward with confidence.</p>
+                <p class="description">In these sessions, we work together to untangle the hidden habits and beliefs that hold you back.</p>
                 <p class="rate">Rate: 150 CAD per session</p>
             </div>
         </section>
 
-        <!-- Couples/Family Sessions -->
         <section class="service-row light reverse" style="flex-direction: row-reverse;">
             <div class="service-img-container">
                 <img src="images/couplehead.png" alt="Couples Sessions" class="service-img">
@@ -195,59 +184,50 @@
             <div class="service-content">
                 <h2 class="red-text">Couples/ Family Sessions</h2>
                 <p class="quote">"Collaborative work to align two different maps into one clear, shared path."</p>
-                <p class="description" style="color: var(--purple-accent);">We work together to decode the patterns and dynamics between you, so you can start building a shared future on the same page.</p>
                 <p class="rate">Rate: $180 per session</p>
             </div>
         </section>
 
-        <!-- Themed Group Sessions -->
         <section class="service-row dark">
             <div class="service-img-container">
                 <img src="images/grouphead.png" alt="Group Sessions" class="service-img">
             </div>
             <div class="service-content">
                 <h2>Themed Group Sessions</h2>
-                <p class="description">In these small groups, we tackle specific life challenges together, using shared experiences and practical tools to help everyone in the room find their own way forward.</p>
                 <p class="rate">Rate: Price varies * please contact for more info</p>
             </div>
         </section>
 
-        <!-- Counseling & Perspective -->
         <section class="service-row light reverse" style="flex-direction: row-reverse;">
             <div class="service-img-container">
                 <img src="images/4.jpg" alt="Perspective" class="service-img">
             </div>
             <div class="service-content">
                 <h2 class="red-text">Counseling & Perspective</h2>
-                <p class="quote">"Sometimes we just need another perspective without needing to dive deep within."</p>
-                <p class="description" style="color: var(--purple-accent);">In these sessions, we focus on resolving immediate friction with the people in your life by looking at the situation from a new angle, giving you simple tools to communicate better.</p>
+                <p class="quote">"Sometimes we just need another perspective..."</p>
                 <p class="rate">Rate: 150 CAD per session</p>
             </div>
         </section>
     </div>
 
-    <!-- Community Access -->
     <section class="community-section">
-        <img src="images/5.png" alt="Community Access" class="community-img">
+        <!-- Corrected image reference -->
+        <img src="images/offer.png" alt="Community Access" class="community-img">
         <div class="community-content">
             <h2>The Community Access</h2>
-            <p>A dedicated portion of my practice is reserved for sessions at lower rates. The same high-level service remains available to individuals and couples committed to their own growth.</p>
+            <p>A dedicated portion of my practice is reserved for sessions at lower rates.</p>
         </div>
     </section>
 
-    <!-- Insurance Banner -->
-    <div class="insurance-banner">
-        *Sessions might be eligible for insurance coverage
-    </div>
+    <div class="insurance-banner">*Sessions might be eligible for insurance coverage</div>
 
-    <!-- Disclaimer Box -->
     <div class="disclaimer-container">
         <div class="disclaimer-inner">
-            <strong>Disclaimer:</strong> While my background includes extensive study and training in psychoanalytical, systemic, and artistic modalities, my practice <u><i>in Canada</i></u> is focused on personal growth, performance enhancement, and the resolution of life dilemmas. I do not provide regulated mental health counseling or psychotherapy.
+            <strong>Disclaimer:</strong> ...my practice <u><i>in Canada</i></u> is focused on personal growth... I do not provide regulated mental health counseling.
         </div>
     </div>
 
-    <a href="contact.html" class="contact-btn">CONTACT US</a>
+    <center><a href="contact.html" class="contact-btn">CONTACT US</a></center>
 
 </body>
 </html>
