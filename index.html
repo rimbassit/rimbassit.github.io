@@ -1,188 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I See Counseling - Home</title>
-    <style>
-        /* Core Brand Colors */
-        :root {
-            --navy: #1A1A3A;
-            --red: #E82431;
-            --systemic-orange: #E85E2E;
-            --purple: #D067C0;
-            --maroon: #7A1A6B;
-            --sage-orange: #E18318;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I See Counseling - Home</title>
+    <style>
+        /* Core Brand Colors */
+        :root {
+            --navy: #1A1A3A;
+            --red: #E82431;
+            --systemic-orange: #E85E2E;
+            --purple: #D067C0;
+            --maroon: #7A1A6B;
+            --sage-orange: #E18318;
+        }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-            color: var(--navy);
-            text-align: center;
-        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: var(--navy);
+            text-align: center;
+            overflow-x: hidden; /* Prevents side-scrolling on mobile */
+        }
 
-        /* Header & Navigation */
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-        }
+        /* Header & Navigation (Responsive) */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 5%;
+            position: relative;
+            z-index: 1000;
+        }
 
-        .main-logo {
-            max-width: 350px;
-            height: auto;
-        }
+        .main-logo {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+        }
 
-        .hamburger {
-            position: absolute;
-            right: 30px;
-            top: 30px;
-            cursor: pointer;
-        }
+        .menu-container {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--navy);
-            margin: 4px 0;
-        }
+        #menu-toggle {
+            display: none;
+        }
 
-        /* Divider Line */
-        .divider {
-            width: 90%;
-            height: 1px;
-            background-color: var(--maroon);
-            margin: 0 auto 30px;
-            opacity: 0.5;
-        }
+        .hamburger {
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+        }
 
-        /* Discover Link - Plain Navy Text */
-        .discover-link {
-            display: inline-block;
-            color: var(--navy);
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 40px;
-        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--navy);
+            margin: 4px 0;
+            transition: 0.3s;
+        }
 
-        /* Icon Grid Layout */
-        .nav-grid {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 40px;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            text-align: right;
+            border-radius: 4px;
+        }
 
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 180px;
-        }
+        .dropdown-content a {
+            color: var(--navy);
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
 
-        .nav-item span {
-            font-weight: bold;
-            margin-bottom: 15px;
-            line-height: 1.2;
-            min-height: 40px;
-            display: flex;
-            align-items: center;
-        }
+        .dropdown-content a:hover {
+            background-color: #f9f9f9;
+            color: var(--red);
+        }
 
-        /* Circular Icons with 8px Red Border */
-        .circle-icon {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 8px solid var(--red);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.3s ease;
-        }
+        #menu-toggle:checked ~ .dropdown-content {
+            display: block;
+        }
 
-        .circle-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        /* Responsive Divider */
+        .divider {
+            width: 90%;
+            height: 1px;
+            background-color: var(--maroon);
+            margin: 10px auto 30px;
+            opacity: 0.3;
+        }
 
-        .circle-icon:hover {
-            transform: scale(1.05);
-        }
+        /* Discover Text */
+        .discover-text {
+            display: block;
+            color: var(--navy);
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .main-logo {
-                max-width: 250px;
-            }
-        }
-    </style>
+        /* Responsive Grid (Flexbox) */
+        .nav-grid {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            gap: 30px;
+            padding: 0 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 220px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .nav-item span {
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Uniform Image Containers */
+        .icon-box {
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures icons aren't cropped */
+        }
+
+        /* Media Queries for Flexible Viewing */
+
+        /* Desktop Adjustments */
+        @media (min-width: 1024px) {
+            .nav-grid {
+                flex-wrap: nowrap; /* Forces horizontal row on wide screens */
+            }
+        }
+
+        /* Tablet/Mobile Adjustments */
+        @media (max-width: 768px) {
+            .main-logo {
+                max-width: 250px;
+            }
+
+            .nav-grid {
+                flex-direction: column; /* Vertical stack for phones */
+                align-items: center;
+            }
+
+            .nav-item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .icon-box {
+                width: 150px; /* Slightly smaller for mobile screens */
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <img src="main-logo.png" alt="I See Counseling Logo" class="main-logo">
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
+    <header>
+        <img src="images/main-logo.png" alt="I See Counseling" class="main-logo">
+        
+        <div class="menu-container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <nav class="dropdown-content">
+                <a href="about.html">About</a>
+                <a href="#">Services</a>
+                <a href="#">Vision</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="divider"></div>
+    <div class="divider"></div>
 
-    <a href="#" class="discover-link">Discover</a>
+    <span class="discover-text">Discover</span>
 
-    <div class="nav-grid">
-        <!-- Who We Are -->
-        <div class="nav-item">
-            <span>Who<br>We Are</span>
-            <a href="about.html" class="circle-icon">
-                <img src="who-we-are.jpg" alt="Who We Are">
-            </a>
-        </div>
+    <div class="nav-grid">
+        <!-- Who We Are -->
+        <a href="about.html" class="nav-item">
+            <span>Who We Are</span>
+            <div class="icon-box">
+                <img src="images/who-we-are.png" alt="Who We Are">
+            </div>
+        </a>
 
-        <!-- What We Offer -->
-        <div class="nav-item">
-            <span>What<br>We Offer</span>
-            <a href="#" class="circle-icon">
-                <img src="offer.png" alt="What We Offer">
-            </a>
-        </div>
+        <!-- What We Offer -->
+        <a href="#" class="nav-item">
+            <span>What We Offer</span>
+            <div class="icon-box">
+                <img src="images/offer.png" alt="What We Offer">
+            </div>
+        </a>
 
-        <!-- Our Vision -->
-        <div class="nav-item">
-            <span>Our<br>Vision</span>
-            <a href="#" class="circle-icon">
-                <img src="vision.jpg" alt="Our Vision">
-            </a>
-        </div>
+        <!-- Our Vision -->
+        <a href="#" class="nav-item">
+            <span>Our Vision</span>
+            <div class="icon-box">
+                <img src="images/vision.png" alt="Our Vision">
+            </div>
+        </a>
 
-        <!-- Contact Us -->
-        <div class="nav-item">
-            <span>Contact<br>Us</span>
-            <a href="#" class="circle-icon">
-                <img src="contact.jpg" alt="Contact Us">
-            </a>
-        </div>
-    </div>
+        <!-- Contact Us -->
+        <a href="#" class="nav-item">
+            <span>Contact Us</span>
+            <div class="icon-box">
+                <img src="images/contact.png" alt="Contact Us">
+            </div>
+        </a>
+    </div>
 
 </body>
 </html>
