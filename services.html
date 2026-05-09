@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - I See Counseling</title>
+    <style>
+        :root {
+            --navy: #2A2A5A; /* Lightened navy */
+            --red: #E82431;
+            --systemic-orange: #E85E2E;
+            --light-orange: #F59E42;
+            --purple-accent: #803080;
+            --baby-blue: #89CFF0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: var(--navy);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Global Header --- */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            border-bottom: 2px solid var(--navy);
+        }
+
+        .main-logo { max-width: 300px; height: auto; }
+
+        .menu-container { position: absolute; right: 5%; }
+        #menu-toggle { display: none; }
+        .hamburger { cursor: pointer; padding: 10px; }
+        .hamburger div { width: 25px; height: 3px; background-color: var(--navy); margin: 4px 0; }
+        .dropdown-content {
+            display: none; position: absolute; right: 0; top: 40px;
+            background: white; min-width: 160px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 100; border-radius: 4px;
+        }
+        .dropdown-content a { color: var(--navy); padding: 12px 16px; text-decoration: none; display: block; }
+        #menu-toggle:checked ~ .dropdown-content { display: block; }
+
+        /* --- Page Title --- */
+        .page-title {
+            font-family: 'Cursive', 'Brush Script MT', sans-serif;
+            font-size: 3rem;
+            color: var(--navy);
+            margin: 30px 0;
+        }
+
+        /* --- Service Row Layout --- */
+        .services-container { width: 100%; max-width: 1000px; }
+
+        .service-row {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            gap: 40px;
+            color: white;
+        }
+
+        .service-row.dark { background-color: var(--navy); }
+        .service-row.light { background-color: #ffffff; color: var(--navy); }
+
+        .service-img-container { flex: 0 0 300px; }
+        .service-img { width: 100%; height: auto; border-radius: 50%; }
+
+        .service-content { flex: 1; }
+        .service-content h2 { font-size: 2rem; margin-top: 0; }
+        .service-content h2.red-text { color: var(--red); }
+        .service-content .quote { font-style: italic; margin-bottom: 15px; font-size: 1.1rem; }
+        .service-content .description { line-height: 1.6; margin-bottom: 15px; }
+        .service-content .rate { font-weight: bold; font-size: 0.9rem; }
+
+        /* --- Community Access Section --- */
+        .community-section {
+            background-color: var(--purple-accent);
+            color: white;
+            width: 100%;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .community-img { width: 180px; margin-bottom: 20px; }
+        .community-content h2 { font-size: 2rem; margin-bottom: 20px; }
+        .community-content p { max-width: 700px; margin: 0 auto; line-height: 1.6; font-size: 1.2rem; }
+
+        /* --- Insurance Banner --- */
+        .insurance-banner {
+            background: linear-gradient(to right, var(--systemic-orange), var(--light-orange));
+            color: white;
+            width: 80%;
+            max-width: 800px;
+            padding: 15px 40px;
+            border-radius: 0 50px 50px 0;
+            margin: 40px 0 20px 0;
+            align-self: flex-start;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* --- Disclaimer Box --- */
+        .disclaimer-container {
+            width: 90%;
+            max-width: 900px;
+            background-color: var(--navy);
+            border-radius: 50px;
+            padding: 5px;
+            margin-bottom: 50px;
+        }
+        .disclaimer-inner {
+            background-color: white;
+            border-radius: 45px;
+            padding: 20px 40px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* --- Contact Button --- */
+        .contact-btn {
+            background-color: var(--navy);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 80px;
+            transition: transform 0.2s;
+        }
+        .contact-btn:hover { transform: scale(1.05); }
+
+        /* --- Mobile Tweaks --- */
+        @media (max-width: 768px) {
+            .service-row { flex-direction: column; text-align: center; }
+            .service-row.reverse { flex-direction: column; }
+            .service-img-container { flex: 0 0 200px; }
+            .insurance-banner { width: 95%; border-radius: 0 30px 30px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="images/main-logo.png" alt="I See Counseling" class="main-logo">
+        <div class="menu-container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <div></div><div></div><div></div>
+            </label>
+            <nav class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">Who we are</a>
+                <a href="#">Services</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <h1 class="page-title">Services</h1>
+
+    <div class="services-container">
+        <!-- Individual Sessions -->
+        <section class="service-row dark">
+            <div class="service-img-container">
+                <img src="images/individual-sessions.png" alt="Individual Sessions" class="service-img">
+            </div>
+            <div class="service-content">
+                <h2>Individual Sessions</h2>
+                <p class="quote">"One-on-one sessions for a deeper, personalized navigation of your internal systems."</p>
+                <p class="description">In these sessions, we work together to untangle the hidden habits and beliefs that hold you back, so you can clearly see your path and move forward with confidence.</p>
+                <p class="rate">Rate: 150 CAD per session</p>
+            </div>
+        </section>
+
+        <!-- Couples/Family Sessions -->
+        <section class="service-row light" style="flex-direction: row-reverse;">
+            <div class="service-img-container">
+                <img src="images/couples-sessions.png" alt="Couples Sessions" class="service-img">
+            </div>
+            <div class="service-content">
+                <h2 class="red-text">Couples/ Family Sessions</h2>
+                <p class="quote">"Collaborative work to align two different maps into one clear, shared path."</p>
+                <p class="description" style="color: var(--purple-accent);">We work together to decode the patterns and dynamics between you, so you can start building a shared future on the same page.</p>
+                <p class="rate">Rate: $180 per session</p>
+            </div>
+        </section>
+
+        <!-- Themed Group Sessions -->
+        <section class="service-row dark">
+            <div class="service-img-container">
+                <img src="images/group-sessions.png" alt="Group Sessions" class="service-img">
+            </div>
+            <div class="service-content">
+                <h2>Themed Group Sessions</h2>
+                <p class="description">In these small groups, we tackle specific life challenges together, using shared experiences and practical tools to help everyone in the room find their own way forward.</p>
+                <p class="rate">Rate: Price varies * please contact for more info</p>
+            </div>
+        </section>
+
+        <!-- Counseling & Perspective -->
+        <section class="service-row light" style="flex-direction: row-reverse;">
+            <div class="service-img-container">
+                <img src="images/telescope.png" alt="Perspective" class="service-img">
+            </div>
+            <div class="service-content">
+                <h2 class="red-text">Counseling & Perspective</h2>
+                <p class="quote">"Sometimes we just need another perspective without needing to dive deep within."</p>
+                <p class="description" style="color: var(--purple-accent);">In these sessions, we focus on resolving immediate friction with the people in your life by looking at the situation from a new angle, giving you simple tools to communicate better.</p>
+                <p class="rate">Rate: 150 CAD per session</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Community Access -->
+    <section class="community-section">
+        <img src="images/hand-star.png" alt="Community" class="community-img">
+        <div class="community-content">
+            <h2>The Community Access</h2>
+            <p>A dedicated portion of my practice is reserved for sessions at lower rates. The same high-level service remains available to individuals and couples committed to their own growth.</p>
+        </div>
+    </section>
+
+    <!-- Insurance Banner -->
+    <div class="insurance-banner">
+        *Sessions might be eligible for insurance coverage
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer-container">
+        <div class="disclaimer-inner">
+            <strong>Disclaimer:</strong> While my background includes extensive study and training in psychoanalytical, systemic, and artistic modalities, my practice <u><i>in Canada</i></u> is focused on personal growth, performance enhancement, and the resolution of life dilemmas. I do not provide regulated mental health counseling or psychotherapy.
+        </div>
+    </div>
+
+    <a href="#" class="contact-btn">CONTACT US</a>
+
+</body>
+</html>
