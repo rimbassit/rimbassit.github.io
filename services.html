@@ -6,7 +6,8 @@
     <title>Services - I See Counseling</title>
     <style>
         :root {
-            --navy: #2A2A5A; /* Lightened navy */
+            /* Using the lightened navy and professional brand palette */
+            --navy: #2A2A5A; 
             --red: #E82431;
             --systemic-orange: #E85E2E;
             --light-orange: #F59E42;
@@ -53,99 +54,102 @@
         /* --- Page Title --- */
         .page-title {
             font-family: 'Cursive', 'Brush Script MT', sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--navy);
-            margin: 30px 0;
+            margin: 40px 0;
+            text-align: center;
         }
 
         /* --- Service Row Layout --- */
-        .services-container { width: 100%; max-width: 1000px; }
+        .services-container { width: 100%; }
 
         .service-row {
             display: flex;
             align-items: center;
-            padding: 40px;
-            gap: 40px;
-            color: white;
+            justify-content: center;
+            padding: 60px 10%;
+            gap: 50px;
         }
 
-        .service-row.dark { background-color: var(--navy); }
+        .service-row.dark { background-color: var(--navy); color: white; }
         .service-row.light { background-color: #ffffff; color: var(--navy); }
 
-        .service-img-container { flex: 0 0 300px; }
-        .service-img { width: 100%; height: auto; border-radius: 50%; }
+        .service-img-container { flex: 0 0 350px; text-align: center; }
+        .service-img { width: 100%; max-width: 350px; height: auto; }
 
-        .service-content { flex: 1; }
-        .service-content h2 { font-size: 2rem; margin-top: 0; }
+        .service-content { flex: 1; max-width: 600px; }
+        .service-content h2 { font-size: 2.2rem; margin-top: 0; font-weight: bold; }
         .service-content h2.red-text { color: var(--red); }
-        .service-content .quote { font-style: italic; margin-bottom: 15px; font-size: 1.1rem; }
-        .service-content .description { line-height: 1.6; margin-bottom: 15px; }
-        .service-content .rate { font-weight: bold; font-size: 0.9rem; }
+        .service-content .quote { font-style: italic; margin-bottom: 20px; font-size: 1.2rem; opacity: 0.9; }
+        .service-content .description { line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
+        .service-content .rate { font-weight: bold; font-size: 1rem; letter-spacing: 0.5px; }
 
         /* --- Community Access Section --- */
         .community-section {
             background-color: var(--purple-accent);
             color: white;
             width: 100%;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
-            margin-top: 40px;
         }
-        .community-img { width: 180px; margin-bottom: 20px; }
-        .community-content h2 { font-size: 2rem; margin-bottom: 20px; }
-        .community-content p { max-width: 700px; margin: 0 auto; line-height: 1.6; font-size: 1.2rem; }
+        .community-img { width: 220px; margin-bottom: 30px; }
+        .community-content h2 { font-size: 2.4rem; margin-bottom: 25px; }
+        .community-content p { max-width: 800px; margin: 0 auto; line-height: 1.7; font-size: 1.3rem; padding: 0 20px; }
 
         /* --- Insurance Banner --- */
         .insurance-banner {
             background: linear-gradient(to right, var(--systemic-orange), var(--light-orange));
             color: white;
-            width: 80%;
-            max-width: 800px;
-            padding: 15px 40px;
+            width: fit-content;
+            padding: 18px 60px;
             border-radius: 0 50px 50px 0;
-            margin: 40px 0 20px 0;
+            margin: 50px 0;
             align-self: flex-start;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
         }
 
         /* --- Disclaimer Box --- */
         .disclaimer-container {
-            width: 90%;
-            max-width: 900px;
+            width: 85%;
+            max-width: 1100px;
             background-color: var(--navy);
-            border-radius: 50px;
-            padding: 5px;
-            margin-bottom: 50px;
+            border-radius: 60px;
+            padding: 8px;
+            margin: 20px auto 60px;
         }
         .disclaimer-inner {
             background-color: white;
-            border-radius: 45px;
-            padding: 20px 40px;
-            font-size: 0.85rem;
-            line-height: 1.4;
+            border-radius: 52px;
+            padding: 30px 50px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--navy);
         }
 
         /* --- Contact Button --- */
         .contact-btn {
             background-color: var(--navy);
             color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
+            padding: 18px 50px;
+            border-radius: 35px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.3rem;
-            margin-bottom: 80px;
-            transition: transform 0.2s;
+            font-size: 1.4rem;
+            margin-bottom: 100px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--navy);
         }
-        .contact-btn:hover { transform: scale(1.05); }
+        .contact-btn:hover { background-color: white; color: var(--navy); }
 
-        /* --- Mobile Tweaks --- */
-        @media (max-width: 768px) {
-            .service-row { flex-direction: column; text-align: center; }
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            .service-row { flex-direction: column ! standpoint; text-align: center; padding: 40px 5%; }
             .service-row.reverse { flex-direction: column; }
-            .service-img-container { flex: 0 0 200px; }
-            .insurance-banner { width: 95%; border-radius: 0 30px 30px 0; }
+            .service-img-container { flex: 0 0 auto; }
+            .service-content { max-width: 100%; }
+            .page-title { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -161,8 +165,8 @@
             <nav class="dropdown-content">
                 <a href="index.html">Home</a>
                 <a href="about.html">Who we are</a>
-                <a href="#">Services</a>
-                <a href="#">Contact Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact Us</a>
             </nav>
         </div>
     </header>
@@ -173,7 +177,7 @@
         <!-- Individual Sessions -->
         <section class="service-row dark">
             <div class="service-img-container">
-                <img src="images/individual-sessions.png" alt="Individual Sessions" class="service-img">
+                <img src="images/individualhead.png" alt="Individual Sessions" class="service-img">
             </div>
             <div class="service-content">
                 <h2>Individual Sessions</h2>
@@ -184,9 +188,9 @@
         </section>
 
         <!-- Couples/Family Sessions -->
-        <section class="service-row light" style="flex-direction: row-reverse;">
+        <section class="service-row light reverse" style="flex-direction: row-reverse;">
             <div class="service-img-container">
-                <img src="images/couples-sessions.png" alt="Couples Sessions" class="service-img">
+                <img src="images/couplehead.png" alt="Couples Sessions" class="service-img">
             </div>
             <div class="service-content">
                 <h2 class="red-text">Couples/ Family Sessions</h2>
@@ -199,7 +203,7 @@
         <!-- Themed Group Sessions -->
         <section class="service-row dark">
             <div class="service-img-container">
-                <img src="images/group-sessions.png" alt="Group Sessions" class="service-img">
+                <img src="images/grouphead.png" alt="Group Sessions" class="service-img">
             </div>
             <div class="service-content">
                 <h2>Themed Group Sessions</h2>
@@ -209,9 +213,9 @@
         </section>
 
         <!-- Counseling & Perspective -->
-        <section class="service-row light" style="flex-direction: row-reverse;">
+        <section class="service-row light reverse" style="flex-direction: row-reverse;">
             <div class="service-img-container">
-                <img src="images/telescope.png" alt="Perspective" class="service-img">
+                <img src="images/4.jpg" alt="Perspective" class="service-img">
             </div>
             <div class="service-content">
                 <h2 class="red-text">Counseling & Perspective</h2>
@@ -224,7 +228,7 @@
 
     <!-- Community Access -->
     <section class="community-section">
-        <img src="images/hand-star.png" alt="Community" class="community-img">
+        <img src="images/5.png" alt="Community Access" class="community-img">
         <div class="community-content">
             <h2>The Community Access</h2>
             <p>A dedicated portion of my practice is reserved for sessions at lower rates. The same high-level service remains available to individuals and couples committed to their own growth.</p>
@@ -236,14 +240,14 @@
         *Sessions might be eligible for insurance coverage
     </div>
 
-    <!-- Disclaimer -->
+    <!-- Disclaimer Box -->
     <div class="disclaimer-container">
         <div class="disclaimer-inner">
             <strong>Disclaimer:</strong> While my background includes extensive study and training in psychoanalytical, systemic, and artistic modalities, my practice <u><i>in Canada</i></u> is focused on personal growth, performance enhancement, and the resolution of life dilemmas. I do not provide regulated mental health counseling or psychotherapy.
         </div>
     </div>
 
-    <a href="#" class="contact-btn">CONTACT US</a>
+    <a href="contact.html" class="contact-btn">CONTACT US</a>
 
 </body>
 </html>
