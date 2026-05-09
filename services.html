@@ -78,15 +78,16 @@
         .service-row.dark { background-color: var(--navy); color: white; }
         .service-row.light { background-color: #ffffff; color: var(--navy); }
 
-        .service-img-container { flex: 0 0 350px; text-align: center; }
-        .service-img { width: 100%; max-width: 350px; height: auto; }
+        .service-img-container { flex: 0 0 300px; text-align: center; }
+        .service-img { width: 100%; max-width: 300px; height: auto; border-radius: 50%; }
 
         .service-content { flex: 1; max-width: 600px; }
         .service-content h2 { font-size: 2.2rem; margin-top: 0; font-weight: bold; }
         .service-content h2.red-text { color: var(--red); }
-        .service-content .quote { font-style: italic; margin-bottom: 20px; font-size: 1.2rem; }
+        .service-content .quote { font-style: italic; margin-bottom: 20px; font-size: 1.2rem; opacity: 0.9; }
         .service-content .description { line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
-        .service-content .rate { font-weight: bold; font-size: 1rem; }
+        .service-content .rate { font-weight: bold; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px; display: inline-block; }
+        .service-row.light .rate { border-top: 1px solid rgba(42, 42, 90, 0.2); }
 
         /* --- Community Access --- */
         .community-section {
@@ -96,7 +97,9 @@
             padding: 80px 0;
             text-align: center;
         }
-        .community-img { width: 220px; margin-bottom: 30px; }
+        .community-img { width: 180px; margin-bottom: 30px; }
+        .community-content h2 { font-size: 2.4rem; margin-bottom: 20px; }
+        .community-content p { max-width: 800px; margin: 0 auto; line-height: 1.7; font-size: 1.2rem; padding: 0 20px; }
 
         /* --- Insurance & Disclaimer --- */
         .insurance-banner {
@@ -122,8 +125,10 @@
             background-color: white;
             border-radius: 52px;
             padding: 30px 50px;
-            font-size: 1rem;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--navy);
+            text-align: left;
         }
 
         .contact-btn {
@@ -136,11 +141,14 @@
             font-size: 1.4rem;
             margin-bottom: 100px;
             display: inline-block;
+            transition: transform 0.2s;
         }
+        .contact-btn:hover { transform: scale(1.05); }
 
         @media (max-width: 900px) {
-            .service-row { flex-direction: column !important; text-align: center; }
+            .service-row { flex-direction: column !important; text-align: center; padding: 40px 5%; }
             .service-row.reverse { flex-direction: column !important; }
+            .page-title { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -165,6 +173,7 @@
     <h1 class="page-title">Services</h1>
 
     <div class="services-container">
+        <!-- Individual Sessions -->
         <section class="service-row dark">
             <div class="service-img-container">
                 <img src="images/individualhead.png" alt="Individual Sessions" class="service-img">
@@ -172,11 +181,12 @@
             <div class="service-content">
                 <h2>Individual Sessions</h2>
                 <p class="quote">"One-on-one sessions for a deeper, personalized navigation of your internal systems."</p>
-                <p class="description">In these sessions, we work together to untangle the hidden habits and beliefs that hold you back.</p>
+                <p class="description">In these sessions, we work together to untangle the hidden habits and beliefs that hold you back, so you can clearly see your path and move forward with confidence.</p>
                 <p class="rate">Rate: 150 CAD per session</p>
             </div>
         </section>
 
+        <!-- Couples/Family Sessions -->
         <section class="service-row light reverse" style="flex-direction: row-reverse;">
             <div class="service-img-container">
                 <img src="images/couplehead.png" alt="Couples Sessions" class="service-img">
@@ -184,38 +194,43 @@
             <div class="service-content">
                 <h2 class="red-text">Couples/ Family Sessions</h2>
                 <p class="quote">"Collaborative work to align two different maps into one clear, shared path."</p>
+                <p class="description">We work together to decode the patterns and dynamics between you, so you can start building a shared future on the same page.</p>
                 <p class="rate">Rate: $180 per session</p>
             </div>
         </section>
 
+        <!-- Themed Group Sessions -->
         <section class="service-row dark">
             <div class="service-img-container">
                 <img src="images/grouphead.png" alt="Group Sessions" class="service-img">
             </div>
             <div class="service-content">
                 <h2>Themed Group Sessions</h2>
+                <p class="description">In these small groups, we tackle specific life challenges together, using shared experiences and practical tools to help everyone in the room find their own way forward.</p>
                 <p class="rate">Rate: Price varies * please contact for more info</p>
             </div>
         </section>
 
+        <!-- Counseling & Perspective -->
         <section class="service-row light reverse" style="flex-direction: row-reverse;">
             <div class="service-img-container">
-                <img src="images/4.jpg" alt="Perspective" class="service-img">
+                <img src="images/4.png" alt="Perspective" class="service-img">
             </div>
             <div class="service-content">
                 <h2 class="red-text">Counseling & Perspective</h2>
-                <p class="quote">"Sometimes we just need another perspective..."</p>
+                <p class="quote">"Sometimes we just need another perspective without needing to dive deep within."</p>
+                <p class="description">In these sessions, we focus on resolving immediate friction with the people in your life by looking at the situation from a new angle, giving you simple tools to communicate better.</p>
                 <p class="rate">Rate: 150 CAD per session</p>
             </div>
         </section>
     </div>
 
+    <!-- Community Access -->
     <section class="community-section">
-        <!-- Corrected image reference -->
         <img src="images/offer.png" alt="Community Access" class="community-img">
         <div class="community-content">
             <h2>The Community Access</h2>
-            <p>A dedicated portion of my practice is reserved for sessions at lower rates.</p>
+            <p>A dedicated portion of my practice is reserved for sessions at lower rates. The same high-level service remains available to individuals and couples committed to their own growth.</p>
         </div>
     </section>
 
@@ -223,11 +238,13 @@
 
     <div class="disclaimer-container">
         <div class="disclaimer-inner">
-            <strong>Disclaimer:</strong> ...my practice <u><i>in Canada</i></u> is focused on personal growth... I do not provide regulated mental health counseling.
+            <strong>Disclaimer:</strong> While my background includes extensive study and training in psychoanalytical, systemic, and artistic modalities, my practice in Canada is focused on personal growth, performance enhancement, and the resolution of life dilemmas. I do not provide regulated mental health counseling or psychotherapy.
         </div>
     </div>
 
-    <center><a href="contact.html" class="contact-btn">CONTACT US</a></center>
+    <div style="text-align: center; width: 100%;">
+        <a href="contact.html" class="contact-btn">CONTACT US</a>
+    </div>
 
 </body>
 </html>
